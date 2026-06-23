@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assests/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand logo" href="#">
+                        <img src="Assests/images/logo.png" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">About US</a>
+                            </li>
+
+                        </ul>
+                        <!-- <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <main class="product-page-container">
+  
+  <section class="product-images">
+    <!-- <div class="main-image-container">
+      <img src="https://via.placeholder.com/500x600" alt="Premium Wireless Headphones" id="main-product-img">
+    </div> -->
+    <div class="thumbnail-images">
+      <img src="Assests/images/cate-1.jpg" alt="Thumbnail 1" class="active-thumb" onclick="changeImage(this.src)">
+      <img src="Assests/images/cate-2.jpg" alt="Thumbnail 2" onclick="changeImage(this.src)">
+      <img src="Assests/images/cate-3.jpg" alt="Thumbnail 3" onclick="changeImage(this.src)">
+    </div>
+  </section>
+
+  <section class="product-details">
+    <span class="brand-name">AudioMax Pro</span>
+    <h1 class="product-title">Premium Wireless Noise-Canceling Headphones</h1>
+    
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="review-count">(124 Customer Reviews)</span>
+    </div>
+
+    <div class="product-price">
+      <span class="current-price">₹14,999</span>
+      <span class="original-price">₹19,999</span>
+      <span class="discount-tag">25% OFF</span>
+    </div>
+
+    <p class="product-description">
+      Experience pure sound with industry-leading noise cancellation. Up to 40 hours of battery life, quick charging, and ultra-comfortable earcups make it perfect for long listening sessions.
+    </p>
+
+    <hr>
+
+    <div class="product-options">
+      <div class="option-group">
+        <h3>Color:</h3>
+        <div class="color-picker">
+          <button class="color-btn black active" title="Matte Black"></button>
+          <button class="color-btn silver" title="Platinum Silver"></button>
+          <button class="color-btn blue" title="Navy Blue"></button>
+        </div>
+      </div>
+
+      <div class="option-group">
+        <h3>Quantity:</h3>
+        <div class="quantity-selector">
+          <button onclick="updateQty(-1)">-</button>
+          <input type="number" id="quantity" value="1" min="1" readonly>
+          <button onclick="updateQty(1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn btn-add-cart">Add to Cart</button>
+      <button class="btn btn-buy-now">Buy Now</button>
+    </div>
+
+    <div class="delivery-info">
+      <p>🚚 <strong>Free Delivery</strong> by Tomorrow</p>
+      <p>🔄 <strong>7 Days</strong> Replacement Policy</p>
+    </div>
+
+  </section>
+</main>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="Assests/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.heroSlider', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+
+        });
+    </script>
+</body>
+
+</html>

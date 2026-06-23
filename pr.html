@@ -1,0 +1,66 @@
+<main class="product-page-container">
+  
+  <section class="product-images">
+    <div class="main-image-container">
+      <img src="https://via.placeholder.com/500x600" alt="Premium Wireless Headphones" id="main-product-img">
+    </div>
+    <div class="thumbnail-images">
+      <img src="https://via.placeholder.com/100" alt="Thumbnail 1" class="active-thumb" onclick="changeImage(this.src)">
+      <img src="https://via.placeholder.com/100" alt="Thumbnail 2" onclick="changeImage(this.src)">
+      <img src="https://via.placeholder.com/100" alt="Thumbnail 3" onclick="changeImage(this.src)">
+    </div>
+  </section>
+
+  <section class="product-details">
+    <span class="brand-name">AudioMax Pro</span>
+    <h1 class="product-title">Premium Wireless Noise-Canceling Headphones</h1>
+    
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="review-count">(124 Customer Reviews)</span>
+    </div>
+
+    <div class="product-price">
+      <span class="current-price">₹14,999</span>
+      <span class="original-price">₹19,999</span>
+      <span class="discount-tag">25% OFF</span>
+    </div>
+
+    <p class="product-description">
+      Experience pure sound with industry-leading noise cancellation. Up to 40 hours of battery life, quick charging, and ultra-comfortable earcups make it perfect for long listening sessions.
+    </p>
+
+    <hr>
+
+    <div class="product-options">
+      <div class="option-group">
+        <h3>Color:</h3>
+        <div class="color-picker">
+          <button class="color-btn black active" title="Matte Black"></button>
+          <button class="color-btn silver" title="Platinum Silver"></button>
+          <button class="color-btn blue" title="Navy Blue"></button>
+        </div>
+      </div>
+
+      <div class="option-group">
+        <h3>Quantity:</h3>
+        <div class="quantity-selector">
+          <button onclick="updateQty(-1)">-</button>
+          <input type="number" id="quantity" value="1" min="1" readonly>
+          <button onclick="updateQty(1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn btn-add-cart">Add to Cart</button>
+      <button class="btn btn-buy-now">Buy Now</button>
+    </div>
+
+    <div class="delivery-info">
+      <p>🚚 <strong>Free Delivery</strong> by Tomorrow</p>
+      <p>🔄 <strong>7 Days</strong> Replacement Policy</p>
+    </div>
+
+  </section>
+</main>
