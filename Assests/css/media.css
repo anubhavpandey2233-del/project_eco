@@ -1,0 +1,71 @@
+/*****************Home Media Query********************/
+
+/* 0-576 Extra Small  */
+@media screen and (max-width:576px) {
+    .allCat {
+        justify-content: center;
+        row-gap: 20px;
+    }
+
+    .main-title {
+        font-size: 30px;
+    }
+     section {
+        margin: 60px 0;
+    }
+    #hero{
+        margin: 60px 0 !important;
+    }
+}
+
+/* 576-760 sm small */
+@media screen and (min-width:576px) {
+    .main-title {
+        font-size: 30px;
+    }
+    section {
+        margin: 60px 0;
+    }
+    #hero{
+        margin: 60px 0 !important;
+    }
+}
+
+/* 768-992 md medium */
+@media screen and (min-width:768px) {
+    .allCat {
+        justify-content: center;
+        row-gap: 20px;
+    }
+
+    .main-title {
+        font-size: 35px;
+    }
+    section {
+        margin: 80px 0;
+    }
+    #hero{
+        margin: 80px 0 !important;
+    }
+
+}
+
+/* 992-1200 lg large */
+@media screen and (min-width:992px) {}
+
+/* 1200-1400 xl extra large */
+@media screen and (min-width:1200px) {
+    .main-title {
+        font-size: 42px;
+    }
+
+    section {
+        margin: 100px 0;
+    }
+    #hero{
+        margin: 80px 0 !important;
+    }
+}
+
+/* 1400-1400+  xxl extra extra large size*/
+@media screen and (min-width:1400px) {}

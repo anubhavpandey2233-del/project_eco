@@ -31,8 +31,20 @@ a {
 }
 
 /* **************************Header************************* */
+header {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+    width: 100%;
+}
+
 .logo img {
-    width: 100px;
+    width: 54px;
+}
+
+header .nav-link {
+    margin: 0 16px;
 }
 
 /* *************************************************** */
@@ -83,7 +95,7 @@ a {
 }
 
 .cateimg a img {
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     border-radius: 50%;
     transition: all 1s;
@@ -361,5 +373,107 @@ a {
 }
 .data .product_nm .data_d .rightprice{
     color: brown;
+}
+/* *************************************************** */
+
+/************************Footer*****************************/
+.footdata{
+    margin: 100px 0;
+    justify-content: space-between;
+}
+.footdata .data img{
+    width: 80px;
+}
+.footdata .data a,p{
+    margin:  0 0 10px 0;
+    color: rgb(72, 72, 72);
+}
+.footdata .data {
+text-align: left;
+}
+.footdata .data a{
+    display: block;
+}
+/* .footdata .data a:hover,p:hover{
+    color: red;
+} */
+.footdata .data .icons a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgb(233, 227, 227);
+    border-radius: 50%;
+    color: rgb(25, 25, 25);
+    padding:5px 7px;
+    font-size: 18px;
+    transition: all 0.5s;
+}
+.footdata .data .icons a:hover{
+    background-color: rgb(220, 70, 70);
+    color: white;
+}
+.footdata .data h4{
+    font-size: 18px;
+    
+}
+.footdata .data ul{
+margin-top: 40px;
+margin-left: -32px;
+}
+.footdata .data ul li{
+    list-style: none;
+    
+   
+}
+.footdata .data ul li a{
+    margin: 0;
+    margin-top: 10px;
+}
+.newsletter p{
+    margin-top: 40px;
+}
+.newsEmail{
+    border: 1px solid rgb(193, 192, 192);
+    padding: 2px 3px;
+   border-radius: 50px;
+   margin: 15px 0;
+}
+.newsEmail form{
+    display: flex;
+    justify-content: space-between;
+}
+.newsEmail form input,button{
+    outline: none;
+    border: none;
+   
+}
+.newsEmail form input{
+    margin-left: 10px;
+}
+.newsEmail form button{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+   padding: 8px;
+    border-radius: 50%;
+}
+.newsEmail form button button {
+    background-color: black;
+    color: white;
+     transition: all 0.5s;
+}
+.newsEmail form button:hover{
+     background-color: rgb(220, 70, 70);
+}
+.newsEmail form  button i{
+    background-color: none;
+    color: white;
+    transform: rotate(-45deg);
+    transition: all 0.5s;
+    
+}
+.newsEmail form  button:hover i{
+    transform: rotate(0);
+    
 }
 /* *************************************************** */
