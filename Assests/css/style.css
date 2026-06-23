@@ -100,18 +100,21 @@ a {
 
 .productimg {
     position: relative;
+     overflow: hidden;
+      border-radius: 15px;
 }
 
 .productimg .discount {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     background-color: rgb(220, 70, 70);
     padding: 1px 10px;
     color: white;
     border-radius: 17px;
     text-align: center;
     font-weight: 530;
+    z-index: 99;
 }
 
 .productimg img {
@@ -120,6 +123,74 @@ a {
     border-radius: 15px;
 }
 
+.productimg .secondimg{
+   position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(/Assests/images/product-3_2.jpg);
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    border-radius: 15px 15px 15px 15px;
+    transition: all 0.5s;
+  
+}
+
+.productimg:hover .secondimg {
+    opacity: 1;
+    transform: scale(1.1);
+    
+}
+
+.productimg .like {
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    transition: all .5s;
+    opacity: 0;
+}
+
+.productimg .like i {
+    display: block;
+    background-color: white;
+    padding: 9px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-bottom: 8px;
+    color: rgb(75, 75, 75);
+}
+
+.productimg:hover .like {
+    position: absolute;
+    right: 35px;
+    opacity: 1;
+
+}
+
+.productimg .quick {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: -15px;
+    width: 90%;
+    background-color: white;
+    padding: 7px;
+    text-align: center;
+    border-radius: 30px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.productimg:hover .quick {
+    opacity: 1;
+    bottom: 10px;
+
+}
+.productimg .quick:hover{
+    background-color: black;
+    color: white;
+}
 .productdata {
     margin-top: 15px;
 }
@@ -128,7 +199,7 @@ a {
     margin: 0 0 0 0;
 }
 
-.productdata .sctar {
+.productdata .star {
     color: rgb(240, 167, 80);
 }
 
@@ -182,35 +253,113 @@ a {
 
 /* **************************Mens & Womens Section************************* */
 
-.shop img{
+.shop img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
 }
-.bag{
+
+.bag {
     margin-top: 10px;
 }
 
-.shop{
+.shop {
     position: relative;
 }
-.shop .name{
+
+.shop .name {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    color:white;  
+    transform: translate(-50%, -50%);
+    color: white;
 }
-.shop .name h3{
+
+.shop .name h3 {
     position: relative;
     font-size: 40px;
     transition: all 1s;
     text-decoration: none;
-    
+
+
+}
+
+.shop .name:hover h3 {
+    text-decoration: underline;
+}
+
+/* *************************************************** */
+
+/* **************************Top Trendings Section************************* */
+#trending .productdata{
+    text-align: left;
+}
+
+/* *************************************************** */
+
+
+/* **************************Reviews Section************************* */
+
+ .image img{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.data .rating i{
+    text-align: left;
+    color: #F0A750;
+}
+.data{
+     align-items: center;
+}
+.data h3{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 650;
+}
+.data span i{
+    background-color: rgb(2, 152, 2);
+    color: white;
+    padding: 2px;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-right: 5px;
+    font-size: 13px;
+}
+.data .rate{
+    margin-top: 20px;
+    font-size: 19px;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+.data .product_nm{
+    display: flex;
+    align-items: center;
+  
+}
+.data .product_nm .img{
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+}
+.data .product_nm .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     
 }
-.shop .name:hover h3{
-   text-decoration: underline;
+.data .product_nm .data_d{
+    margin-left: 15px;
+    font-weight: 550;
+}
+.data .product_nm .data_d p{
+    margin: 0;
+}
+.data .product_nm .data_d .rightprice{
+    color: brown;
 }
 /* *************************************************** */
