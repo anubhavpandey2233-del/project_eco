@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assests/css/style.css">
+    <link rel="stylesheet" href="Assests/css/media.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div class="logo">
+                        <a class="navbar-brand logo" href="#">
+                            <img src="Assests/images/logo.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="Index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="Product.html">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="reviews.html">Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="about.html">About US</a>
+                            </li>
+
+                        </ul>
+
+                        <div class="fav_cart">
+                            <ul class="icons">
+                                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                                <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+                                <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                                <li><a href="#"></a><i class="fa-solid fa-cart-shopping"></i></li>
+                            </ul>
+                        </div>
+                        <!-- <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="product-page">
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <!-- Left Side -->
+                        <div class="product-images">
+                            <div class="main-image">
+                                <span class="discount">25% OFF</span>
+                                <img src="Assests/images/product-2.jpg" alt="Women's Sweatshirt">
+
+                            </div>
+
+
+                            <div class="thumb-images">
+                                <img src="Assests/images/product-3_2.jpg" alt="">
+                                <img src="Assests/images/product-3_2.jpg" alt="">
+                                <img src="Assests/images/product-3_2.jpg" alt="">
+                                <img src="Assests/images/product-3_2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <!-- Right Side -->
+                        <div class="product-details">
+                            <h1>Women's Gray Sweatshirt</h1>
+
+                            <p class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(128 Reviews)</span>
+                            </p>
+
+
+
+                            <div class="price">
+                                ₹1,499
+                                <del>₹1,999</del>
+                                <span class="offer">25% OFF</span>
+                            </div>
+
+                            <p class="desc">
+                                Premium quality women's sweatshirt made from soft cotton fabric.
+                                Comfortable, stylish and perfect for casual wear.
+                            </p>
+
+                            <!-- Colors -->
+                            <h3>Color</h3>
+                            <div class="colors">
+                                <span class="blue"></span>
+                                <span class="black"></span>
+                                <span class="pink"></span>
+                            </div>
+
+                            <!-- Sizes -->
+                            <h3>Size</h3>
+                            <div class="sizes">
+                                <button>S</button>
+                                <button>M</button>
+                                <button>L</button>
+                                <button>XL</button>
+                            </div>
+
+                            <!-- Quantity -->
+                            <h3>Quantity</h3>
+                            <div class="qty">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="buttons">
+                                <a href="#" class="cart">Add To Cart</a>
+                                <a href="#" class="buy">Buy Now</a>
+                            </div>
+
+                            <!-- Features -->
+                            <div class="features">
+                                <div>🚚 Free Delivery</div>
+                                <div>🔄 7 Days Return</div>
+                                <div>🛡️ Secure Payment</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <!-- Product Information Section -->
+                <section class="product-info">
+
+                    <div class="tabs">
+                        <button class="active">Product Details</button>
+                        <button>Specifications</button>
+                        <button>Reviews (128)</button>
+                        <button>Q & A</button>
+                    </div>
+
+                    <div class="details-content">
+                        <div class="left-content">
+                            <p>
+                                This premium women's sweatshirt combines style, comfort and durability.
+                                It features soft cotton fabric and a modern oversized fit that is perfect
+                                for casual wear and winter outfits.
+                            </p>
+
+                            <h3>Key Features</h3>
+
+                            <ul>
+                                <li>✔ Premium cotton fabric</li>
+                                <li>✔ Soft and comfortable material</li>
+                                <li>✔ Trendy oversized fit</li>
+                                <li>✔ Full sleeves design</li>
+                                <li>✔ Perfect for casual and winter wear</li>
+                            </ul>
+                        </div>
+
+                        <div class="right-content">
+                            <img src="Assests/images/product-2.jpg" alt="">
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <!-- Related Products -->
+
+            </div>
+        </section>
+
+
+        <section class="related-products container">
+
+            <h2 class="mb-4">You May Also Like</h2>
+
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="card">
+                        <img src="Assests/images/product-2.jpg" class="img-fluid" alt="">
+                        <h4>Gray Sweatskirt</h4>
+                        <p>₹1,499</p>
+                        <a href="#" class="cart">Add To Cart</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="card">
+                        <img src="Assests/images/product-3.jpg" class="img-fluid" alt="">
+                        <h4>Gray Sweatshirt</h4>
+                        <p>₹1,699</p>
+                       <a href="#" class="cart">Add To Cart</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="card">
+                        <img src="Assests/images/product-6.jpg" class="img-fluid" alt="">
+                        <h4>Sunglasses</h4>
+                        <p>₹1,399</p>
+                        <a href="#" class="cart">Add To Cart</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="card">
+                        <img src="Assests/images/product-4.jpg" class="img-fluid" alt="">
+                        <h4>Winter Coat</h4>
+                        <p>₹1,899</p>
+                        <a href="#" class="cart">Add To Cart</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div class="container">
+        <hr>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footdata">
+                <div class="row">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="data">
+                            <img src="./Assests/images/logo.png" alt="">
+                            <p>151 Xyz Society,Surat,Gujarat</p>
+                            <a href="#">Open in map</a>
+                            <a href="#">shop123@gamil.com</a>
+                            <p>+91 22334-355667</p>
+                            <div class="icons">
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+                                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="data">
+                            <h4>COMPANY</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Our Stories</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Latest New</a></li>
+                                <li><a href="#">My Account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="data">
+                            <h4>CUSTOMER</h4>
+                            <ul>
+                                <li><a href="#">Shipping</a></li>
+                                <li><a href="#">Return & Refund</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Te-sm & Conditions</a></li>
+                                <li><a href="#">Orders FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="data newsletter">
+                            <h4>NEWSLETTER</h4>
+                            <p>Subscribe for store updates and discounts.</p>
+                            <div class="newsEmail">
+                                <form action="">
+                                    <input type="email" placeholder="enter email">
+
+
+                                    <button type="submit">
+                                        <i class="fa-solid fa-arrow-right"></i>
+
+                            </div>
+                            </form>
+                        </div>
+                        <p>By clicking subcribe, you agree to the</p>
+                        <a href="#">Terms of Service and Privacy Policy.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="Assests/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.heroSlider', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+
+        });
+    </script>
+</body>
+
+</html>

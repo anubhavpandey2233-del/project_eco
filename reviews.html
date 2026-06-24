@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assests/css/style.css">
+    <link rel="stylesheet" href="Assests/css/media.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div class="logo">
+                        <a class="navbar-brand logo" href="#">
+                            <img src="Assests/images/logo.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="Index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="Product.html">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="reviews.html">Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="about.html">About US</a>
+                            </li>
+
+                        </ul>
+
+                        <div class="fav_cart">
+                            <ul class="icons">
+                                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                                <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+                                <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                                <li><a href="#"></a><i class="fa-solid fa-cart-shopping"></i></li>
+                            </ul>
+                        </div>
+                        <!-- <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+   
+  <main>
+    <section class="reviews-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Customer Reviews</h2>
+            <p>See what our happy customers are saying about us.</p>
+        </div>
+
+        <div class="row">
+
+            <!-- Rating Summary -->
+            <div class="col-lg-4">
+                <div class="rating-summary">
+
+                    <h1>4.8</h1>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p>Based on 2,548 Reviews</p>
+
+                    <div class="progress-box">
+                        <span>5 Star</span>
+                        <div class="progress">
+                            <div class="fill" style="width:85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-box">
+                        <span>4 Star</span>
+                        <div class="progress">
+                            <div class="fill" style="width:10%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-box">
+                        <span>3 Star</span>
+                        <div class="progress">
+                            <div class="fill" style="width:3%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-box">
+                        <span>2 Star</span>
+                        <div class="progress">
+                            <div class="fill" style="width:1%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-box">
+                        <span>1 Star</span>
+                        <div class="progress">
+                            <div class="fill" style="width:1%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Review Cards -->
+            <div class="col-lg-8">
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <div class="review-card">
+
+                            <div class="user">
+                                <div class="user-img">
+                                    A
+                                </div>
+
+                                <div>
+                                    <h5>Anubhav Patel</h5>
+                                    <span>Verified Buyer</span>
+                                </div>
+                            </div>
+
+                            <div class="stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+
+                            <p>
+                                Amazing quality products and fast delivery.
+                                The shopping experience was smooth and easy.
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="review-card">
+
+                            <div class="user">
+                                <div class="user-img">
+                                    P
+                                </div>
+
+                                <div>
+                                    <h5>Priya Sharma</h5>
+                                    <span>Verified Buyer</span>
+                                </div>
+                            </div>
+
+                            <div class="stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+
+                            <p>
+                                Customer support is excellent and the products
+                                are exactly as shown in the images.
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="review-card">
+
+                            <div class="user">
+                                <div class="user-img">
+                                    R
+                                </div>
+
+                                <div>
+                                    <h5>Rahul Verma</h5>
+                                    <span>Verified Buyer</span>
+                                </div>
+                            </div>
+
+                            <div class="stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+
+                            <p>
+                                Good collection and easy return policy.
+                                Definitely recommend this website.
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="review-card">
+
+                            <div class="user">
+                                <div class="user-img">
+                                    S
+                                </div>
+
+                                <div>
+                                    <h5>Sneha Joshi</h5>
+                                    <span>Verified Buyer</span>
+                                </div>
+                            </div>
+
+                            <div class="stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+
+                            <p>
+                                One of the best online shopping experiences.
+                                Beautiful design and premium products.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>  
+  </main>
+
+
+
+    <div class="container">
+        <hr>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footdata">
+                <div class="row">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="data">
+                            <img src="./Assests/images/logo.png" alt="">
+                            <p>151 Xyz Society,Surat,Gujarat</p>
+                            <a href="#">Open in map</a>
+                            <a href="#">shop123@gamil.com</a>
+                            <p>+91 22334-355667</p>
+                            <div class="icons">
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+                                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="data">
+                            <h4>COMPANY</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Our Stories</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Latest New</a></li>
+                                <li><a href="#">My Account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="data">
+                            <h4>CUSTOMER</h4>
+                            <ul>
+                                <li><a href="#">Shipping</a></li>
+                                <li><a href="#">Return & Refund</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Te-sm & Conditions</a></li>
+                                <li><a href="#">Orders FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="data newsletter">
+                            <h4>NEWSLETTER</h4>
+                            <p>Subscribe for store updates and discounts.</p>
+                            <div class="newsEmail">
+                                <form action="">
+                                    <input type="email" placeholder="enter email">
+
+
+                                    <button type="submit">
+                                        <i class="fa-solid fa-arrow-right"></i>
+
+                            </div>
+                            </form>
+                        </div>
+                        <p>By clicking subcribe, you agree to the</p>
+                        <a href="#">Terms of Service and Privacy Policy.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="Assests/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.heroSlider', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+
+        });
+    </script>
+</body>
+
+</html>
