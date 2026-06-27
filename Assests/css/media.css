@@ -132,3 +132,26 @@
         font-size:32px;
     }
 }
+
+@media(max-width:991px) {
+
+    .hero-content {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+}
+
+@media(max-width:576px) {
+
+    .hero-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}
