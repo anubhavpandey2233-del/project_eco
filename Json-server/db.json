@@ -1,0 +1,35 @@
+{
+  "category": [
+    {
+      "name": "bat",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "name": "books"
+    },
+    {
+      "name": "toys",
+      "id": "svmOCZMmBlM"
+    },
+    {
+      "name": "electronic",
+      "id": "6SPQn_rJ6gw"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "shirt"
+    },
+    {
+      "id": "2",
+      "name": "maths"
+    },
+    {
+      "name": "fan",
+      "id": "wh-4S21ruqo"
+    }
+  ]
+  
+}
