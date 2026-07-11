@@ -1,0 +1,311 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', Arial, sans-serif;
+}
+
+
+body{
+    background:#f6f8f6;
+}
+
+
+
+/* Main Row Full Height */
+
+.container-fluid,
+.row{
+    min-height:100vh;
+}
+
+
+
+/* =====================
+   Sidebar
+===================== */
+
+.sidebar{
+
+    max-height:70vh;
+
+    height:70vh;
+
+    background:#ffffff;
+
+    border-radius:0 20px 20px 0;
+
+    padding:25px 18px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+
+    position:sticky;
+
+    top:0;
+
+}
+
+
+
+
+/* Logo */
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+
+.logo img{
+
+    width:80px;
+
+}
+
+
+.logo h3{
+
+    color:#2d6a4f;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-top:8px;
+
+}
+
+
+
+
+
+/* Menu */
+
+.menu{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+
+
+.menu li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px 18px;
+
+    margin-bottom:15px;
+
+    color:#0d6efd;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+
+
+.menu li i{
+
+    font-size:18px;
+
+}
+
+
+
+.menu li:hover{
+
+    background:#e9f5ef;
+
+    color:#2d6a4f;
+
+}
+
+
+
+.menu li.active{
+
+    background:#2d6a4f;
+
+    color:white;
+
+}
+
+
+
+
+
+
+/* =====================
+   Main Content
+===================== */
+
+
+.main{
+
+    padding:35px;
+
+}
+
+
+
+.title{
+
+    color:#1b4332;
+
+    font-weight:700;
+
+}
+
+
+
+
+
+
+/* Cards */
+
+.custom-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+.card-header{
+
+    background:#2d6a4f;
+
+    color:white;
+
+    padding:16px 20px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+/* Form */
+
+.form-control{
+
+    border-radius:10px;
+
+    padding:12px;
+
+}
+
+
+
+.form-control:focus{
+
+    border-color:#2d6a4f;
+
+    box-shadow:0 0 5px rgba(45,106,79,.3);
+
+}
+
+
+
+
+
+.save-btn{
+
+    background:#2d6a4f;
+
+    color:white;
+
+    border-radius:25px;
+
+    padding:10px 30px;
+
+    border:none;
+
+}
+
+
+
+.save-btn:hover{
+
+    background:#1b4332;
+
+}
+
+
+
+
+
+/* Table */
+
+.table{
+
+    background:white;
+
+}
+
+
+
+.table thead th{
+
+    background:#1b4332;
+
+    color:white;
+
+}
+
+
+
+.table img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:10px;
+
+    object-fit:cover;
+
+}
+span{
+    color: red;
+}
+
+
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .sidebar{
+
+        height:auto;
+
+        min-height:auto;
+
+    }
+
+}
