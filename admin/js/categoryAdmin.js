@@ -1,30 +1,30 @@
 
 let arr = []
-let update=null
+let update = null
 
-function displaydata() {
-    let print = ''
-    for (let i = 0; i < arr.length; i++) {
+// function displaydata() {
+//     let print = ''
+//     for (let i = 0; i < arr.length; i++) {
 
-        print += `
-        <tr>
-            <td>Sr.no</td>
-            <td>${arr[i].file}</td>
-            <td>${arr[i].cat}</td>
-            <td>${arr[i].desc}</td>
-            <td>
-                <button class="btn btn-warning btn-sm" onclick="handleedit(${i})">
-                    <i class="bi bi-pencil"></i>
-                </button>
-                <button class="btn btn-danger btn-sm" onclick="handledelete(${i})">
-                    <i class="bi bi-trash"></i>
-                </button>
-            </td>
-        </tr>
-    `
-    }
-    document.getElementById("displaydata").innerHTML = print
-}
+//         print += `
+//         <tr>
+//             <td>Sr.no</td>
+//             <td>${arr[i].file}</td>
+//             <td>${arr[i].cat}</td>
+//             <td>${arr[i].desc}</td>
+//             <td>
+//                 <button class="btn btn-warning btn-sm" onclick="handleedit(${i})">
+//                     <i class="bi bi-pencil"></i>
+//                 </button>
+//                 <button class="btn btn-danger btn-sm" onclick="handledelete(${i})">
+//                     <i class="bi bi-trash"></i>
+//                 </button>
+//             </td>
+//         </tr>
+//     `
+//     }
+//     document.getElementById("displaydata").innerHTML = print
+// }
 
 
 function handlesubmit() {
@@ -61,22 +61,18 @@ function handlesubmit() {
 
     if (desc === '') {
         document.getElementById("desErr").innerHTML = "Please write description here.."
+    } else {
+        document.getElementById("desErr").innerHTML = ""
     }
-    arr.push({
-        cat: cat,
-        file: file,
-        desc: desc
-    })
-
-displaydata()
+   
 }
 
-function handleedit(i){
-    
-}
+// function handleedit(i) {
 
-function handledelete(i) {
-  arr.splice(i, 1)
-  displaydata()
-}
+// }
+
+// function handledelete(i) {
+//     arr.splice(i, 1)
+//     displaydata()
+// }
 

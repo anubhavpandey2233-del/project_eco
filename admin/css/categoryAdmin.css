@@ -14,11 +14,6 @@ body{
 
 /* Main Row Full Height */
 
-.container-fluid,
-.row{
-    min-height:100vh;
-}
-
 
 
 /* =====================

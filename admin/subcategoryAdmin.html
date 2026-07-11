@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="Assests/css/adminpannel.css">
+    <link rel="stylesheet" href="./css/categoryAdmin.css">
 
 </head>
 
@@ -32,26 +32,28 @@
 
 
                     <div class="logo bg-white text-center rounded-4 p-3 mb-4">
-                        <h4 class="m-0"><img src="Assests/images/logo.png" alt="" style="width: 5rem;"></h4>
+                        <h4 class="m-0"><img src="../Assests/images/logo.png" alt="" style="width: 5rem;"></h4>
                     </div>
 
 
                     <div class="nav flex-column gap-2">
 
 
-                        <a href="#" class="nav-link active">
+                        <a href="categoryAdmin.html" class="nav-link active">
                             <i class="bi bi-grid-fill"></i>
                             Category
                         </a>
 
 
-                        <a href="#" class="nav-link">
+                        <a href="subcategoryAdmin.html" class="nav-link">
                             <i class="bi bi-list"></i>
                             Sub Category
+
+
                         </a>
 
 
-                        <a href="#" class="nav-link">
+                        <a href="ProductAdmin.html" class="nav-link">
                             <i class="bi bi-box-seam"></i>
                             Product
                         </a>
@@ -88,7 +90,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-4">
 
                     <h3 class="title">
-                        Category Management
+                        Subcategory Management
                     </h3>
 
 
@@ -101,12 +103,12 @@
 
                 <div class="card border-0 rounded-4 shadow-sm mb-4">
 
-                    <form action="#" method="get" onsubmit="handlesubmit()">
+                    <form action="#" method="get" onsubmit="handlesubcategory()">
 
 
                         <div class="card-header theme-header rounded-top-4">
 
-                            Add Category
+                            Add Subcategory
 
                         </div>
 
@@ -121,13 +123,25 @@
 
                                     <label class="form-label">
                                         Category Name
-                                    </label>
+                                    </label><br>
+                                    <select class="form-select" name="subcat" id="subcat">
+                                        <option value="">---Select Category---</option>
+                                        <option value="1">Toys</option>
+                                        <option value="2">Men Clothes</option>
+                                        <option value="3">Women Clothes</option>
+                                        <option value="4">Electronics</option>
+                                        <option value="5">Mobile & Laptos</option>
+                                    </select>
+                                    <span id="catErr"></span>
 
-                                    <input type="text" class="form-control" placeholder="Enter Category" id="catname">
-                                    <span id="nameErr"></span>
                                 </div>
 
-
+                                <div class="col-md-6">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter Category"
+                                        id="subcatname">
+                                    <span id="nameErr"></span>
+                                </div>
                                 <div class="col-md-6">
 
                                     <label class="form-label">
@@ -145,7 +159,8 @@
                                         Description
                                     </label>
 
-                                    <textarea class="form-control" rows="4" placeholder="Enter Description" id="desc"></textarea>
+                                    <textarea class="form-control" rows="4" placeholder="Enter Description"
+                                        id="desc"></textarea>
                                     <span id="desErr"></span>
                                 </div>
 
@@ -153,7 +168,7 @@
                                 <div class="col-12">
 
                                     <button type="submit" class="btn save-btn px-4">
-                                        Save Category
+                                        Save Subcategory
                                     </button>
 
                                 </div>
@@ -175,7 +190,7 @@
                 <!-- Table Card -->
 
 
-                 <div class="card border-0 rounded-4 shadow-sm">
+                <div class="card border-0 rounded-4 shadow-sm">
 
 
                     <div class="card-header theme-header rounded-top-4">
@@ -200,6 +215,7 @@
 
                                         <th>Sr.no</th>
                                         <th>Image</th>
+                                        <th>Category Name</th>
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Action</th>
@@ -219,9 +235,11 @@
                                         <td>
                                             <img src="https://via.placeholder.com/60">
                                         </td>
-
                                         <td>
                                             Electronics
+                                        </td>
+                                        <td>
+                                            Fan
                                         </td>
 
                                         <td>
@@ -246,12 +264,12 @@
                             </table>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="Assests/js/adminpannel.js"></script>
+    <script src="js/subcategoryAdmin.js"></script>
 </body>
 
 </html>
