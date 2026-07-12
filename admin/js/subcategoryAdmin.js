@@ -4,7 +4,7 @@ function handlesubcategory() {
 
     let subcat = document.getElementById("subcat").value;
     let subcatname=document.getElementById("subcatname").value;
-    let file = document.getElementById("file").value;
+    let file = document.getElementById("file").files[0];
     let desc = document.getElementById("desc").value;
 
     console.log(subcat, file, desc);
@@ -27,15 +27,21 @@ function handlesubcategory() {
             document.getElementById("nameErr").innerHTML = "please enter valid category name"
         }
     }
-    if (file === '') {
+   if (file === '') {
         document.getElementById("fileErr").innerHTML = "Please choose file"
     } else {
-        const refile = /(\.jpg|\.jpeg|\.bmp|\.gif|\.png)$/i;
+        const allowedfiles=['image/jpeg','image/jpg','image/png']
 
-        if (refile.test(file)) {
+        if (allowedfiles.includes(file.type)) {
             document.getElementById("fileErr").innerHTML = ""
+
+            if(file.size<2*1024*1024){
+                document.getElementById("fileErr").innerHTML = ""
+            } else{
+                  document.getElementById("fileErr").innerHTML = "please enter files under 2 mb."
+            }
         } else {
-            document.getElementById("fileErr").innerHTML = "please enter valid file."
+            document.getElementById("fileErr").innerHTML = "please enter jpeg,jpg and png types file."
         }
     }
 
