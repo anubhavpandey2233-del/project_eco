@@ -27,7 +27,7 @@ function handlesubcategory() {
             document.getElementById("nameErr").innerHTML = "please enter valid category name"
         }
     }
-   if (file === '') {
+   if (!file) {
         document.getElementById("fileErr").innerHTML = "Please choose file"
     } else {
         const allowedfiles=['image/jpeg','image/jpg','image/png']

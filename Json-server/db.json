@@ -1,20 +1,28 @@
 {
   "category": [
     {
-      "name": "bat",
-      "id": "2"
+      "name": "abcwedaedddf",
+      "category_image": "istockphoto-178716575-612x612.jpg",
+      "description": "sdfcdfsfdfgsdfsdf",
+      "id": "lyeIjOP83_k"
     },
     {
-      "id": "3",
-      "name": "books"
+      "name": "def",
+      "category_image": "images.jpg",
+      "description": "fgfgsdfdfd",
+      "id": "znaR0X3-Iuo"
     },
     {
-      "name": "toys",
-      "id": "svmOCZMmBlM"
+      "name": "etgfgv",
+      "category_image": "Mobile-devices.jpg",
+      "description": "sfd",
+      "id": "aQfWyx-4QY4"
     },
     {
-      "name": "electronic",
-      "id": "6SPQn_rJ6gw"
+      "name": "pc",
+      "category_image": "images.jpg",
+      "description": "iwertfrdhbjkmjhm",
+      "id": "wlN9wBgT6II"
     }
   ],
   "products": [
@@ -30,6 +38,6 @@
       "name": "fan",
       "id": "wh-4S21ruqo"
     }
-  ]
-  
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

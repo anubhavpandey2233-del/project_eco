@@ -1,0 +1,273 @@
+class Budget {
+
+    constructor() {
+        this.Budget = document.getElementById("budget-input");
+    }
+
+    handlebudget() {
+        event.preventDefault();
+
+        console.log(this.Budget.value);
+
+        if (this.Budget.value === '') {
+            document.getElementById("budgetInputErr").innerHTML = "Please enter budget";
+        } else {
+            if (isNaN(this.Budget.value) || parseInt(this.Budget.value) <= 0) {
+                document.getElementById("budgetInputErr").innerHTML = "Please enter valid budget";
+            } else {
+                document.getElementById("budgetInputErr").innerHTML = "";
+                // document.getElementById("budget").innerHTML = "$" + this.Budget.value
+
+                localStorage.setItem("budget", this.Budget.value);
+            }
+        }
+
+
+    }
+
+    handleData() {
+        let budgetdata = JSON.parse(localStorage.getItem("budget"));
+        let expansedata = JSON.parse(localStorage.getItem("expanse"));
+
+        if (budgetdata) {
+            document.getElementById("budget-amount").innerHTML = budgetdata;
+        }
+        let expanseaddamt = 0
+
+        if (expansedata) {
+            expanseaddamt = expansedata.reduce((add, v) => add + parseFloat(v.amount), 0)
+            document.getElementById("expense-amount").innerHTML = expanseaddamt;
+        }
+
+        document.getElementById("balance-amount").innerHTML = budgetdata - expanseaddamt
+
+    }
+
+
+
+}
+const b1 = new Budget()
+let update = null;
+// let savebudget = localStorage.getItem("budget")
+// if (savebudget !== null) {
+//     document.getElementById("budget").innerHTML = "$" + savebudget
+// }
+
+
+
+// let arr = [];
+class Expanse extends Budget {
+    constructor() {
+        super();
+
+        this.expanse = document.getElementById("expense-input");
+        this.amount = document.getElementById("amount-input");
+
+        this.update = null;
+        this.updateRef = null;
+    }
+
+
+    handleamount() {
+        event.preventDefault();
+        let formErr = false;
+
+        if (this.expanse.value === '') {
+            document.getElementById("expTitleErr").innerHTML = "Please enter expanse";
+            formErr = true
+        } else {
+            document.getElementById("expTitleErr").innerHTML = "";
+        }
+
+        // console.log(this.expanse.value);
+        // console.log(this.amount.value);
+
+
+        if (this.amount.value === '') {
+            document.getElementById("expAmtErr").innerHTML = "Please enter amount";
+            formErr = true
+        } else {
+            if (isNaN(this.amount.value) || parseInt(this.amount.value) <= 0) {
+                document.getElementById("expAmtErr").innerHTML = "Please enter valid amount";
+                formErr = true
+            } else {
+                document.getElementById("expAmtErr").innerHTML = "";
+                document.getElementById("expense-amount").innerHTML = this.amount.value
+
+                // localStorage.setItem("expanse", this.amount.value);
+            }
+        }
+
+
+
+        if (!formErr) {
+            let obj = {
+                id: crypto.randomUUID(),
+                expanse: this.expanse.value,
+                amount: this.amount.value
+            }
+
+            let expstorage = JSON.parse(localStorage.getItem("expanse"));
+
+            if (expstorage) {
+
+
+                if (this.update === null) {
+                    expstorage.push(obj);
+                    this.displaydata(obj)
+                } else {
+
+                    let editexpansedata = JSON.parse(localStorage.getItem("expanse"))
+                    let editexpanseIndex = editexpansedata.findIndex((v1) => v1.id == this.update)
+
+                    console.log(editexpanseIndex);
+
+                    expstorage[editexpanseIndex] = obj
+
+                    this.updateRef.childNodes[0].textContent = obj.expanse;
+                    this.updateRef.childNodes[1].textContent = obj.amount;
+
+
+                }
+                this.update = null;
+                localStorage.setItem("expanse", JSON.stringify(expstorage))
+
+            } else {
+                localStorage.setItem("expanse", JSON.stringify([obj]))
+                this.displaydata(obj)
+            }
+            this.handleData();
+
+            this.expanse.value = ''
+            this.amount.value = ''
+
+
+        }
+
+        // arr.push(Number(this.amount.value))
+        // let print = `
+        //     <ul>
+
+        // `
+        // for (let i = 0; i < arr.length; i++) {
+        //     print += `
+        //      <li>${arr[i]}</li>
+        //     `
+        // }
+
+        // print += "</ul>";
+        // document.getElementById("displayarray").innerHTML = print
+
+
+
+        // let totalamt=arr.reduce((add,v)=>add+v,0)
+        // console.log(totalamt);
+        // document.getElementById("expense-amount").innerHTML =totalamt
+
+    }
+
+    displaydata(v) {
+
+        console.log(v);
+
+        let divEle = document.createElement("div");
+
+        let expEle = document.createElement("span")
+        expEle.textContent = v.expanse;
+        expEle.setAttribute("class", "expele")
+
+        let expAmt = document.createElement("span");
+        expAmt.textContent = v.amount;
+
+        let editbtn = document.createElement("button")
+        editbtn.setAttribute("class", "editbtn")
+        let editicon = document.createElement("i")
+        editicon.setAttribute("class", "fa-solid fa-pen")
+        editicon.setAttribute("style", "color:blue")
+
+        editbtn.appendChild(editicon)
+
+        let delbtn = document.createElement("button")
+        delbtn.setAttribute("class", "delbtn")
+        delbtn.setAttribute("style", "border:none")
+        let deleteicon = document.createElement("i")
+        deleteicon.setAttribute("class", "fa-solid fa-trash")
+        deleteicon.setAttribute("style", "color:red")
+        delbtn.appendChild(deleteicon)
+
+        divEle.appendChild(expEle)
+        divEle.appendChild(expAmt)
+        divEle.appendChild(editbtn)
+        divEle.appendChild(delbtn)
+
+        let divdisplay = document.createElement("div");
+        divdisplay.appendChild(divEle)
+        divdisplay.setAttribute("id", "show")
+
+        console.log(divdisplay);
+
+        let display = document.getElementById("exp-data")
+        display.appendChild(divdisplay)
+
+
+        //delete
+        delbtn.addEventListener("click", () => {
+            console.log(v.id);
+
+            let expansedata = JSON.parse(localStorage.getItem("expanse"));
+
+            let expanseIndex = expansedata.findIndex((v1) => v1.id == v.id)
+
+            expansedata.splice(expanseIndex, 1)
+
+            localStorage.setItem("expanse", JSON.stringify(expansedata));
+
+            delbtn.parentNode.remove();
+
+            this.handleData()
+        })
+
+
+
+        //edit
+        editbtn.addEventListener("click", () => {
+            this.expanse.value = v.expanse
+            this.amount.value = v.amount
+
+            this.update = v.id;
+            this.updateRef = editbtn.parentNode;
+        })
+    }
+
+
+}
+const e = new Expanse();
+// let saveExpanse = localStorage.getItem("expanse");
+// if (saveExpanse !== null) {
+//     document.getElementById("expense-amount").innerHTML = saveExpanse;
+// }
+
+
+const budget = document.getElementById("budget-form")
+budget.addEventListener("submit", function () {
+    b1.handlebudget();
+    b1.handleData();
+})
+const expanse = document.getElementById("expense-form")
+expanse.addEventListener("submit", function () {
+    e.handleamount()
+    e.handleData()
+})
+window.onload = function () {
+    b1.handleData();
+
+    let dispdata = JSON.parse(localStorage.getItem("expanse"));
+
+    if (expanse) {
+        dispdata.map((v) => {
+            // console.log(v);
+            e.displaydata(v)
+        })
+    }
+
+}
