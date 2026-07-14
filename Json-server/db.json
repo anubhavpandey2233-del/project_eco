@@ -1,28 +1,46 @@
 {
   "category": [
     {
-      "name": "abcwedaedddf",
-      "category_image": "istockphoto-178716575-612x612.jpg",
-      "description": "sdfcdfsfdfgsdfsdf",
+      "name": "changeimg",
+      "category_image": "electronics.webp",
+      "description": "changeimg",
       "id": "lyeIjOP83_k"
     },
     {
-      "name": "def",
+      "name": "doneokk",
       "category_image": "images.jpg",
-      "description": "fgfgsdfdfd",
+      "description": "doneokk\n",
       "id": "znaR0X3-Iuo"
     },
     {
-      "name": "etgfgv",
-      "category_image": "Mobile-devices.jpg",
-      "description": "sfd",
+      "name": "pcokkk",
+      "category_image": "istockphoto-178716575-612x612.jpg",
+      "description": "pcdonefinal",
       "id": "aQfWyx-4QY4"
     },
     {
-      "name": "pc",
-      "category_image": "images.jpg",
-      "description": "iwertfrdhbjkmjhm",
+      "name": "pcokk",
+      "category_image": "istockphoto-178716575-612x612.jpg",
+      "description": "okk",
       "id": "wlN9wBgT6II"
+    },
+    {
+      "name": "etgfgv",
+      "category_image": "images.jpg",
+      "description": "sdfdsf",
+      "id": "ImLTxCIsiwk"
+    },
+    {
+      "name": "abc",
+      "category_image": "images.jpg",
+      "description": "abcokk",
+      "id": "7tHn5kzzWAk"
+    },
+    {
+      "name": "fdvbc",
+      "category_image": "electronics.webp",
+      "description": "fdgf",
+      "id": "dj9SVxDxqgI"
     }
   ],
   "products": [
@@ -39,5 +57,7 @@
       "id": "wh-4S21ruqo"
     }
   ],
-  "$schema": "./node_modules/json-server/schema.json"
+  "subcategory":[
+    
+  ]
 }

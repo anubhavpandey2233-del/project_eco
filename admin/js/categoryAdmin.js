@@ -1,8 +1,16 @@
 let update = null;
 const handlesubmit = async () => {
+    event.preventDefault();
     let cat = document.getElementById("catname").value;
     let file = document.getElementById("file").files[0];
     let desc = document.getElementById("desc").value;
+
+    let alreadyExistImg = document.getElementById("displayImg").src.split("/");
+
+    let arr = alreadyExistImg
+
+    console.log(alreadyExistImg);
+
 
     console.log(cat, file, desc);
     let formErr = false
@@ -22,10 +30,15 @@ const handlesubmit = async () => {
     }
 
     if (!file) {
-        document.getElementById("fileErr").innerHTML = "Please choose file"
-        formErr = true
+
+        if (update === null) {
+            document.getElementById("fileErr").innerHTML = "Please choose file"
+            formErr = true
+        }
     } else {
         const allowedfiles = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
+
+        console.log(file.type);
 
         if (allowedfiles.includes(file.type)) {
             document.getElementById("fileErr").innerHTML = ""
@@ -53,17 +66,16 @@ const handlesubmit = async () => {
 
 
     if (!formErr) {
+        let file1 = document.getElementById("file");
 
-        // let Display_img = document.getElementById("displayImg").src
         let obj = {
             name: cat,
-            category_image: file.name,
+            category_image: file1?.files[0]?.name ? file1?.files[0]?.name : arr[arr.length - 1],
             description: desc
         }
 
+
         console.log(obj);
-
-
 
         if (update) {
             const response = await fetch(`http://localhost:3000/category/${update}`, {
@@ -88,11 +100,7 @@ const handlesubmit = async () => {
             const data = await response.stringify();
             console.log(data);
         }
-
-
-
     }
-
 }
 
 const handledelete = async (id) => {
@@ -102,8 +110,8 @@ const handledelete = async (id) => {
     })
 
     console.log(id);
-
 }
+
 const handleEdit = async (id) => {
 
     let response = await fetch(`http://localhost:3000/category/${id}`);
@@ -114,7 +122,6 @@ const handleEdit = async (id) => {
     document.getElementById("desc").value = data.description
 
     update = id;
-
 }
 const displaycategory = async () => {
 
@@ -150,7 +157,21 @@ const displaycategory = async () => {
 
 window.onload = displaycategory;
 
-
-
 const categoryForm = document.getElementById("catefory_form")
 categoryForm.addEventListener("submit", handlesubmit)
+
+const change_image = document.getElementById("file");
+change_image.addEventListener("change", function () {
+    console.log("jfkgf")
+    let img_change = file.files[0].name
+
+    document.getElementById("displayImg").src = './images/' + img_change
+
+})
+
+
+
+
+
+
+
