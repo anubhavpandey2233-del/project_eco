@@ -2,7 +2,7 @@ let update = null;
 const handlesubmit = async () => {
     event.preventDefault();
     let cat = document.getElementById("catname").value;
-    let file = document.getElementById("file").files[0];
+    let file1 = document.getElementById("file1").files[0];
     let desc = document.getElementById("desc").value;
 
     let alreadyExistImg = document.getElementById("displayImg").src.split("/");
@@ -12,7 +12,7 @@ const handlesubmit = async () => {
     console.log(alreadyExistImg);
 
 
-    console.log(cat, file, desc);
+    console.log(cat, file1, desc);
     let formErr = false
 
     if (cat === '') {
@@ -29,29 +29,29 @@ const handlesubmit = async () => {
         }
     }
 
-    if (!file) {
+    if (!file1) {
 
         if (update === null) {
-            document.getElementById("fileErr").innerHTML = "Please choose file"
+            document.getElementById("fileErr").innerHTML = "Please choose file1"
             formErr = true
         }
     } else {
         const allowedfiles = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
 
-        console.log(file.type);
+        console.log(file1.type);
 
-        if (allowedfiles.includes(file.type)) {
+        if (allowedfiles.includes(file1.type)) {
             document.getElementById("fileErr").innerHTML = ""
 
-            if (file.size < 2 * 1024 * 1024) {
+            if (file1.size < 2 * 1024 * 1024) {
                 document.getElementById("fileErr").innerHTML = ""
-                localStorage.setItem("file", this.file.value)
+                localStorage.setItem("file1", this.file1.value)
             } else {
                 document.getElementById("fileErr").innerHTML = "please enter files under 2 mb."
                 formErr = true
             }
         } else {
-            document.getElementById("fileErr").innerHTML = "please enter jpeg,jpg and png types file."
+            document.getElementById("fileErr").innerHTML = "please enter jpeg,jpg and png types file1."
             formErr = true
         }
     }
@@ -66,7 +66,7 @@ const handlesubmit = async () => {
 
 
     if (!formErr) {
-        let file1 = document.getElementById("file");
+        let file1 = document.getElementById("file1");
 
         let obj = {
             name: cat,
@@ -160,10 +160,13 @@ window.onload = displaycategory;
 const categoryForm = document.getElementById("catefory_form")
 categoryForm.addEventListener("submit", handlesubmit)
 
-const change_image = document.getElementById("file");
+const change_image = document.getElementById("file1");
 change_image.addEventListener("change", function () {
-    console.log("jfkgf")
-    let img_change = file.files[0].name
+    console.log("jfkgf", file1)
+    let img_change = change_image.files[0].name;
+
+    console.log(img_change);
+    
 
     document.getElementById("displayImg").src = './images/' + img_change
 

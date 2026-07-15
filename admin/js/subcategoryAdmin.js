@@ -2,7 +2,7 @@ let update = null
 const handlesubcatsubmit = async () => {
     event.preventDefault()
 
-    let subcat = document.getElementById("subcat").value;
+    let categoryId = document.getElementById("subcat").value;
     let subcat_name = document.getElementById("subcatname").value;
     let subcat_img = document.getElementById("subcatimg").files[0];
     let desc = document.getElementById("desc").value;
@@ -15,9 +15,9 @@ const handlesubcatsubmit = async () => {
 
     let formErr = false
 
-    console.log(subcat, subcat_name, subcat_img, desc);
+    console.log(categoryId, subcat_name, subcat_img, desc);
 
-    if (subcat === '') {
+    if (categoryId === '') {
         document.getElementById("catErr").innerHTML = "Please select any subcategory"
         formErr = true
     } else {
@@ -71,7 +71,7 @@ const handlesubcatsubmit = async () => {
     if (!formErr) {
         let file1 = document.getElementById("subcatimg")
         let obj = {
-            subcat: subcat,
+            categoryId: categoryId,
             subcat_name: subcat_name,
             subcat_img: file1?.files[0]?.name ? file1?.files[0]?.name : arr[arr.length - 1],
             desc: desc
@@ -86,7 +86,9 @@ const handlesubcatsubmit = async () => {
                 },
                 body: JSON.stringify(obj)
             })
-            const data = await response.json()
+            const data = await response.stringify()
+            console.log(data);
+
 
 
         } else {
@@ -105,18 +107,27 @@ const handlesubcatsubmit = async () => {
 
 
 }
+
 const displaySubcategory = async () => {
 
     let response = await fetch("http://localhost:3000/subcategory")
     const data = await response.json();
     console.log(data);
 
+    // get all category data    cData
+
+    let res = await fetch("http://localhost:3000/category");
+    const cData = await res.json();
+    
+
+    //cData  find v.id == v.categoryId      .name
+
     let print = '';
     data.map((v, i) => {
         print += `
            <tr>
-                 <td>${i + 1}</td>
-            <td>${v.subcat}</td>
+                <td>${i + 1}</td>
+            <td>${cData.find((v1) => v1.id == v.categoryId).name}</td>                   
              <td>${v.subcat_name}</td>
             <td><img src="./images/${v.subcat_img}"></td>
             <td>${v.desc}</td>
@@ -156,28 +167,14 @@ const handleEdit = async (id) => {
     let data = await response.json();
     console.log(data);
 
-    document.getElementById("subcat").value = data.subcat
+    document.getElementById("subcat").value = data.categoryId
     document.getElementById("subcatname").value = data.subcat_name
-    document.getElementById("subcatimg").src = './images/' + data.subcat_img
+    document.getElementById("displayImg").src = './images/' + data.subcat_img
     document.getElementById("desc").value = data.desc
 
     update = id;
 
 }
-const change_subcatimage = document.getElementById("subcatimg");
-change_subcatimage.addEventListener("change", function () {
-    console.log("jfkgf")
-    let img_change = subcat_img.files[0].name
-
-    document.getElementById("displayImg").src = './images/' + img_change
-
-})
-
-
-
-
-
-
 
 const handlesubcat = async () => {
 
@@ -191,16 +188,11 @@ const handlesubcat = async () => {
      <option value="">---Select Category---</option>`
     data.map((v, i) => {
         print += `
-            <option value="${v.name}">${v.name}</option>
+            <option value="${v.id}">${v.name}</option>
        `
     })
-
     document.getElementById("subcat").innerHTML = print
-
 }
-
-
-
 
 let display_subcat = document.getElementById("handlesubmitofsubcat");
 display_subcat.addEventListener("submit", handlesubcatsubmit)
@@ -209,3 +201,12 @@ window.onload = () => {
     handlesubcat();
     displaySubcategory()
 };
+
+const change_subcatimage = document.getElementById("subcatimg");
+change_subcatimage.addEventListener("change", function () {
+    console.log("jfkgf")
+    let img_change = change_subcatimage.files[0].name
+
+    document.getElementById("displayImg").src = './images/' + img_change
+
+})

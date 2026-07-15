@@ -1,16 +1,16 @@
 function handleproduct() {
     event.preventDefault()
 
-    let cat = document.getElementById("cat").value;
-    let subcat = document.getElementById("subcat").value;
+    let category = document.getElementById("cat").value;
+    let subcategory = document.getElementById("subcat").value;
     let subcatname = document.getElementById("subcatname").value;
     let price = document.getElementById("price").value;
-    let file = document.getElementById("file").files[0]; //files[0] se file ka pura object mil jata hai
+    let productImg = document.getElementById("file").files[0]; //files[0] se file ka pura object mil jata hai
     let desc = document.getElementById("desc").value;
 
     console.log(cat, subcat, file, desc, price);
 
-    if (cat === '') {
+    if (category === '') {
         document.getElementById("catErr").innerHTML = "Please select category"
     } else {
 
@@ -18,7 +18,7 @@ function handleproduct() {
 
     }
 
-    if (subcat === '') {
+    if (subcategory === '') {
         document.getElementById("subcatErr").innerHTML = "Please select subcategory"
     } else {
 
@@ -36,17 +36,17 @@ function handleproduct() {
             document.getElementById("nameErr").innerHTML = "please enter valid category name"
         }
     }
-    if (!file) {
+    if (!productImg) {
         document.getElementById("fileErr").innerHTML = "Please choose file"
     } else {
         const allowedfiles = ['image/jpeg', 'image/jpg', 'image/png']
 
-        console.log(file.type, allowedfiles.includes(file.type));
+        console.log(productImg.type, allowedfiles.includes(file.type));
 
-        if (allowedfiles.includes(file.type)) {
+        if (allowedfiles.includes(productImg.type)) {
             document.getElementById("fileErr").innerHTML = ""
 
-            if (file.size < 2 * 1024 * 1024) {
+            if (productImg.size < 2 * 1024 * 1024) {
                 document.getElementById("fileErr").innerHTML = ""
             } else {
                 document.getElementById("fileErr").innerHTML = "enter files under 2 MB"
@@ -80,3 +80,43 @@ function handleproduct() {
 
 }
 
+const fetchCategory=async()=>{
+
+   const response = await fetch("http://localhost:3000/category");
+    let data = await response.json();
+
+    console.log(data);
+   
+    let print=`
+        <option>---Select Anyone---<option>
+    `
+    data.map((v,i)=>{
+        print+=`
+              <option value="${v.id}">${v.name}<option>
+        `
+    })
+    document.getElementById("cat").innerHTML=print
+}
+
+const fetchSubcategory=async()=>{
+    let response=await fetch("http://localhost:3000/subcategory");
+    let data=await response.json();
+
+    let print=`
+        <option>---Select Subcategory---</option>   
+    `
+    data.map((v,i)=>{
+        print+=`
+                <option value="${v.id}">${v.subcat_name}</option>    
+        `
+    })
+    document.getElementById("subcat").innerHTML=print
+}
+
+
+
+
+window.onload=()=>{
+    fetchCategory();
+    fetchSubcategory();
+}

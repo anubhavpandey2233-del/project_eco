@@ -59,25 +59,39 @@
   ],
   "subcategory": [
     {
-      "subcat": "fdvbc",
-      "subcat_name": "sadsfs",
-      "subcat_img": "istockphoto-178716575-612x612.jpg",
-      "desc": "gfjghjhk",
-      "id": "7rZTdpL42ds"
+      "categoryId": "7tHn5kzzWAk",
+      "subcat_name": "dsdqqqqqqqqqq",
+      "subcat_img": "images.jpg",
+      "desc": "aaa",
+      "id": "jivLSJwA1UE"
     },
     {
-      "subcat": "abc",
-      "subcat_name": "sadsfs",
-      "subcat_img": "istockphoto-178716575-612x612.jpg",
-      "desc": "bckhvb jnbfjbngncfgbgf",
-      "id": "jW0_60iWI6Y"
+      "categoryId": "znaR0X3-Iuo",
+      "subcat_name": "sdasd",
+      "subcat_img": "images.jpg",
+      "desc": "ds",
+      "id": "oYOOLveJt2c"
     },
     {
-      "subcat": "changeimg",
-      "subcat_name": "dsf",
+      "categoryId": "znaR0X3-Iuo",
+      "subcat_name": "sadsfs",
+      "subcat_img": "images.jpg",
+      "desc": "asdsa",
+      "id": "xBjGFSXJYBI"
+    },
+    {
+      "categoryId": "lyeIjOP83_k",
+      "subcat_name": "sadsfs",
       "subcat_img": "istockphoto-178716575-612x612.jpg",
-      "desc": "drgffg",
-      "id": "hh16zZXif64"
+      "desc": "dfgfdgfdgdfgdf",
+      "id": "agPG05gRpiM"
+    },
+    {
+      "categoryId": "7tHn5kzzWAk",
+      "subcat_name": "aaaaaaaaa",
+      "subcat_img": "istockphoto-178716575-612x612.jpg",
+      "desc": "aaa",
+      "id": "7JIZQr5gnr8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
