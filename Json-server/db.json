@@ -59,13 +59,6 @@
   ],
   "subcategory": [
     {
-      "subcat": "abc",
-      "subcat_name": "sadsfsfinalfinalfinal",
-      "subcat_img": "subcategoryAdmin.html?",
-      "desc": "dcfbchghg",
-      "id": "Nkxy3uANWyw"
-    },
-    {
       "subcat": "fdvbc",
       "subcat_name": "sadsfs",
       "subcat_img": "istockphoto-178716575-612x612.jpg",
@@ -78,6 +71,13 @@
       "subcat_img": "istockphoto-178716575-612x612.jpg",
       "desc": "bckhvb jnbfjbngncfgbgf",
       "id": "jW0_60iWI6Y"
+    },
+    {
+      "subcat": "changeimg",
+      "subcat_name": "dsf",
+      "subcat_img": "istockphoto-178716575-612x612.jpg",
+      "desc": "drgffg",
+      "id": "hh16zZXif64"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

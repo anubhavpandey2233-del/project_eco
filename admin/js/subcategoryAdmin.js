@@ -164,6 +164,15 @@ const handleEdit = async (id) => {
     update = id;
 
 }
+const change_subcatimage = document.getElementById("subcatimg");
+change_subcatimage.addEventListener("change", function () {
+    console.log("jfkgf")
+    let img_change = subcat_img.files[0].name
+
+    document.getElementById("displayImg").src = './images/' + img_change
+
+})
+
 
 
 
@@ -189,6 +198,7 @@ const handlesubcat = async () => {
     document.getElementById("subcat").innerHTML = print
 
 }
+
 
 
 
