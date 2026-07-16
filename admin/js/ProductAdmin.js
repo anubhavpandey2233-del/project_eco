@@ -8,7 +8,7 @@ function handleproduct() {
     let productImg = document.getElementById("file").files[0]; //files[0] se file ka pura object mil jata hai
     let desc = document.getElementById("desc").value;
 
-    console.log(cat, subcat, file, desc, price);
+    console.log(category, subcategory, subcatname, productImg, desc, price);
 
     if (category === '') {
         document.getElementById("catErr").innerHTML = "Please select category"
@@ -41,7 +41,7 @@ function handleproduct() {
     } else {
         const allowedfiles = ['image/jpeg', 'image/jpg', 'image/png']
 
-        console.log(productImg.type, allowedfiles.includes(file.type));
+        console.log(productImg.type, allowedfiles.includes(productImg.type));
 
         if (allowedfiles.includes(productImg.type)) {
             document.getElementById("fileErr").innerHTML = ""
@@ -80,43 +80,50 @@ function handleproduct() {
 
 }
 
-const fetchCategory=async()=>{
+const fetchCategory = async () => {
 
-   const response = await fetch("http://localhost:3000/category");
+    const response = await fetch("http://localhost:3000/category");
     let data = await response.json();
 
     console.log(data);
-   
-    let print=`
-        <option>---Select Anyone---<option>
+
+    let print = `
+        <option value="">---Select Anyone---</option>
     `
-    data.map((v,i)=>{
-        print+=`
-              <option value="${v.id}">${v.name}<option>
+    data.map((v, i) => {
+        print += `
+              <option value="${v.id}">${v.name}</option>
         `
     })
-    document.getElementById("cat").innerHTML=print
+    document.getElementById("cat").innerHTML = print
 }
 
-const fetchSubcategory=async()=>{
-    let response=await fetch("http://localhost:3000/subcategory");
-    let data=await response.json();
+const fetchSubcategory = async () => {
+    let response = await fetch("http://localhost:3000/subcategory");
+    let data = await response.json();
 
-    let print=`
-        <option>---Select Subcategory---</option>   
+    let categoryId = document.getElementById("cat").value;
+    // console.log(category_id);
+    
+    const filterData = data.filter((v) => v.categoryId === categoryId);
+    // console.log(filterData);
+    
+    let print = `
+        <option value="">---Select Subcategory---</option>   
     `
-    data.map((v,i)=>{
-        print+=`
+    filterData.map((v, i) => {
+        print += `
                 <option value="${v.id}">${v.subcat_name}</option>    
         `
     })
-    document.getElementById("subcat").innerHTML=print
+    document.getElementById("subcat").innerHTML = print
+
+
 }
 
 
 
 
-window.onload=()=>{
+window.onload = () => {
     fetchCategory();
-    fetchSubcategory();
 }
