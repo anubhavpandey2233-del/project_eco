@@ -5,9 +5,71 @@
       "category_image": "electronics.webp",
       "description": "Electronics",
       "id": "MGwgleDaeCA"
+    },
+    {
+      "name": "Toys",
+      "category_image": "car.jpg",
+      "description": "Toy",
+      "id": "4nH1P5SwJfA"
+    },
+    {
+      "name": "Clothes",
+      "category_image": "clothesCat.jpg",
+      "description": "Clothes",
+      "id": "CosOVwGsxmw"
     }
   ],
-  "products": [],
-  "subcategory": [],
+  "products": [
+    {
+      "category": "MGwgleDaeCA",
+      "subcategory": "gkFvnF2Z904",
+      "productName": "Laptop",
+      "price": "100",
+      "productImg": "istockphoto-178716575-612x612.jpg",
+      "desc": "This laptop is good",
+      "id": "xVCLSaCuZBY"
+    },
+    {
+      "category": "4nH1P5SwJfA",
+      "subcategory": "jbR-DvIiGEM",
+      "productName": "toycar",
+      "price": "50",
+      "productImg": "car.jpg",
+      "desc": "mini cute toycar",
+      "id": "G24XZK_viAc"
+    },
+    {
+      "category": "CosOVwGsxmw",
+      "subcategory": "MBq4efQJnYQ",
+      "productName": "Shirt",
+      "price": "150",
+      "productImg": "product1.jpg",
+      "desc": "girls trending shirt",
+      "id": "e6SRHbQcsTU"
+    }
+  ],
+  "subcategory": [
+    {
+      "categoryId": "MGwgleDaeCA",
+      "subcat_name": "Pc",
+      "subcat_img": "istockphoto-178716575-612x612.jpg",
+      "desc": "This laptop is good",
+      "id": "gkFvnF2Z904"
+    },
+    {
+      "categoryId": "4nH1P5SwJfA",
+      "subcat_name": "car",
+      "subcat_img": "car.jpg",
+      "desc": "this is fav car of children",
+      "id": "jbR-DvIiGEM"
+    },
+    {
+      "categoryId": "CosOVwGsxmw",
+      "subcat_name": "GirlsShirt",
+      "subcat_img": "product1.jpg",
+      "desc": "Girls trending shirts",
+      "id": "MBq4efQJnYQ"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -37,6 +37,95 @@ const fetchCategory=async()=>{
 
 }
 
+const fetchProduct=async()=>{
+    const response=await fetch("http://localhost:3000/products");
+    const data=await response.json()
+    console.log(data);
+
+    let print='';
+
+    data.map((v)=>{
+        print+=`
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="todayproduct">
+                    <div class="productimg">
+                        <div class="discount">25%-</div>
+                        <img src="./admin/images/${v.productImg}" alt="">
+                        <img src="./admin/images/${v.productImg}" class="secondimg" alt="">
+                        <div class="like">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            <i class="fa-regular fa-eye"></i>
+
+                        </div>
+                        <a href="#" class="quick">Quick Add</a>
+                    </div>
+                    <div class="productdata">
+                        <p>${v.productName}</p>
+                        <p class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <p><span class="cutprice">$99,99</span><span class="rightprice">${v.price}</span></p>
+                        <a href="#" class="black colr "><span></span></a>
+                        <a href="#" class="gray colr"><span></span></a>
+                        <a href="#" class="brown colr"><span></span></a>
+                    </div>
+                </div>
+            </div>
+        `
+    })
+    document.getElementById("displayProducts").innerHTML=print
+
+}
+
+const fetchTrendingProducts=async()=>{
+    const response=await fetch("http://localhost:3000/products");
+    const data=await response.json();
+    console.log(data);
+    let print=''
+    data.map((v)=>{
+        print+= `
+            <div class="col-sm-6 col-lg-3">
+                <div class="todayproduct">
+                    <div class="productimg">
+                        <div class="discount">25%-</div>
+                        <img src="./admin/images/${v.productImg}" alt="">
+                        <img src="./admin/images/${v.productImg}" class="secondimg" alt="">
+                        <div class="like">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            <i class="fa-regular fa-eye"></i>
+
+                        </div>
+                        <a href="#" class="quick">Quick Add</a>
+                    </div>
+                    <div class="productdata">
+                        <p>${v.productName}</p>
+                        <p class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <p><span class="cutprice">$99,99</span><span class="rightprice">${v.price}</span></p>
+                        <a href="#" class="black colr "><span></span></a>
+                        <a href="#" class="gray colr"><span></span></a>
+                        <a href="#" class="brown colr"><span></span></a>
+                    </div>
+                </div>
+            </div>
+        `
+    })
+    document.getElementById("displayTrendingProduct").innerHTML=print
+}
+
 window.onload=()=>{
     fetchCategory()
+    fetchProduct()
+    fetchTrendingProducts()
 }   
