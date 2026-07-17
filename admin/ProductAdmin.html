@@ -103,7 +103,7 @@
 
                 <div class="card border-0 rounded-4 shadow-sm mb-4">
 
-                    <form action="#" method="get" onsubmit="handleproduct()">
+                    <form action="#" method="get" id="handleproductsubmit">
 
 
                         <div class="card-header theme-header rounded-top-4">
@@ -165,7 +165,8 @@
                                         Image
                                     </label>
 
-                                    <input type="file" class="form-control" id="file">
+                                    <input type="file" class="form-control" id="fileImage">
+                                    <img src="" alt="" id="productImage" style="width: 50px; height: 50px;">
                                     <span id="fileErr"></span>
                                 </div>
 
@@ -241,11 +242,11 @@
                                     <tr>
 
                                         <th>Sr.no</th>
-                                        <th>Image</th>
                                         <th>Category</th>
                                         <th>Subcategory</th>
-                                        <th>Name</th>
+                                        <th>ProductName</th>
                                         <th>Price</th>
+                                        <th>Image</th>
                                         <th>Description</th>
                                         <th>Action</th>
 
@@ -254,10 +255,10 @@
                                 </thead>
 
 
-                                <tbody>
+                                <tbody id="displayProductTable">
 
 
-                                    <tr>
+                                    <!-- <tr>
 
                                         <td>1</td>
 
@@ -291,7 +292,7 @@
                                             </button>
 
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>

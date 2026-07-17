@@ -1,98 +1,13 @@
 {
   "category": [
     {
-      "name": "changeimg",
+      "name": "Electronics",
       "category_image": "electronics.webp",
-      "description": "changeimg",
-      "id": "lyeIjOP83_k"
-    },
-    {
-      "name": "doneokk",
-      "category_image": "images.jpg",
-      "description": "doneokk\n",
-      "id": "znaR0X3-Iuo"
-    },
-    {
-      "name": "pcokkk",
-      "category_image": "istockphoto-178716575-612x612.jpg",
-      "description": "pcdonefinal",
-      "id": "aQfWyx-4QY4"
-    },
-    {
-      "name": "pcokk",
-      "category_image": "istockphoto-178716575-612x612.jpg",
-      "description": "okk",
-      "id": "wlN9wBgT6II"
-    },
-    {
-      "name": "etgfgv",
-      "category_image": "images.jpg",
-      "description": "sdfdsf",
-      "id": "ImLTxCIsiwk"
-    },
-    {
-      "name": "abc",
-      "category_image": "images.jpg",
-      "description": "abcokk",
-      "id": "7tHn5kzzWAk"
-    },
-    {
-      "name": "fdvbc",
-      "category_image": "electronics.webp",
-      "description": "fdgf",
-      "id": "dj9SVxDxqgI"
+      "description": "Electronics",
+      "id": "MGwgleDaeCA"
     }
   ],
-  "products": [
-    {
-      "id": "1",
-      "name": "shirt"
-    },
-    {
-      "id": "2",
-      "name": "maths"
-    },
-    {
-      "name": "fan",
-      "id": "wh-4S21ruqo"
-    }
-  ],
-  "subcategory": [
-    {
-      "categoryId": "7tHn5kzzWAk",
-      "subcat_name": "dsdqqqqqqqqqq",
-      "subcat_img": "images.jpg",
-      "desc": "aaa",
-      "id": "jivLSJwA1UE"
-    },
-    {
-      "categoryId": "znaR0X3-Iuo",
-      "subcat_name": "sdasd",   
-      "subcat_img": "images.jpg",
-      "desc": "ds",
-      "id": "oYOOLveJt2c"
-    },
-    {
-      "categoryId": "znaR0X3-Iuo",
-      "subcat_name": "sadsfs",
-      "subcat_img": "images.jpg",
-      "desc": "asdsa",
-      "id": "xBjGFSXJYBI"
-    },
-    {
-      "categoryId": "lyeIjOP83_k",
-      "subcat_name": "sadsfs",
-      "subcat_img": "istockphoto-178716575-612x612.jpg",
-      "desc": "dfgfdgfdgdfgdf",
-      "id": "agPG05gRpiM"
-    },
-    {
-      "categoryId": "7tHn5kzzWAk",
-      "subcat_name": "aaaaaaaaa",
-      "subcat_img": "istockphoto-178716575-612x612.jpg",
-      "desc": "aaa",
-      "id": "7JIZQr5gnr8"
-    }
-  ],
+  "products": [],
+  "subcategory": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

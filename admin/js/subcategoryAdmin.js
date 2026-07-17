@@ -118,7 +118,7 @@ const displaySubcategory = async () => {
 
     let res = await fetch("http://localhost:3000/category");
     const cData = await res.json();
-    
+
 
     //cData  find v.id == v.categoryId      .name
 
@@ -127,20 +127,20 @@ const displaySubcategory = async () => {
         print += `
            <tr>
                 <td>${i + 1}</td>
-            <td>${cData.find((v1) => v1.id == v.categoryId).name}</td>                   
-             <td>${v.subcat_name}</td>
-            <td><img src="./images/${v.subcat_img}"></td>
-            <td>${v.desc}</td>
-            <td>
-                <button class="btn btn-warning btn-sm" onclick="handleEdit('${v.id}')">
-                    <i class="bi bi-pencil"></i>
-                </button>
+                <td>${cData?.find((v1) => v1.id == v.categoryId)?.name}</td>                   
+                <td>${v.subcat_name}</td>
+                <td><img src="./images/${v.subcat_img}"></td>
+                <td>${v.desc}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="handleEdit('${v.id}')">
+                        <i class="bi bi-pencil"></i>
+                    </button>
 
 
-                <button class="btn btn-danger btn-sm" onclick="handledelete('${v.id}')">
-                    <i class="bi bi-trash"></i>
-                </button>
-            </td>
+                    <button class="btn btn-danger btn-sm" onclick="handledelete('${v.id}')">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
            </tr>
         `
     }
