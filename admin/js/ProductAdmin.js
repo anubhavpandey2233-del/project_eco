@@ -9,12 +9,22 @@ const productSubmit = async () => {
     let price = document.getElementById("price").value;
     let productImg = document.getElementById("fileImage").files[0]; //files[0] se file ka pura object mil jata hai
     let desc = document.getElementById("desc").value;
+    let checkBox = document.querySelectorAll('input[type="checkbox"]:checked')
 
-    let alreadyExistImg = document.getElementById("fileImage").src.split("/");
+    let array = [];
+
+    for (let i = 0; i < checkBox.length; i++) {
+        array.push(checkBox[i].value)
+    }
+    console.log(array);
+
+    
+    
+    let alreadyExistImg = document.getElementById("productImage").src.split("/");
     let arr = alreadyExistImg
     console.log(alreadyExistImg);
 
-    console.log(category, subcategory, productName, productImg, desc, price);
+    // console.log(category, subcategory, productName, productImg, desc, price, checkBox);
     let formErr = false;
 
     if (category === '') {
@@ -102,6 +112,10 @@ const productSubmit = async () => {
 
     if (!formErr) {
 
+        console.log(productImg);
+        console.log(arr);
+        
+
         let productImg1 = document.getElementById("fileImage");
         let obj = {
             category,
@@ -109,7 +123,8 @@ const productSubmit = async () => {
             productName,
             price,
             productImg: productImg1?.files[0]?.name ? productImg1?.files[0]?.name : arr[arr.length - 1],
-            desc
+            desc,
+            tags:array
         }
 
         if (update) {
@@ -171,6 +186,7 @@ const productTable = async () => {
                 <td>${v.price}</td>
                 <td><img src="./images/${v.productImg}"></td>
                 <td>${v.desc}</td>
+                <td>${v.tags}</td>
                  <td>
                     <button class="btn btn-warning btn-sm" onclick="handleEdit('${v.id}')">
                         <i class="bi bi-pencil"></i>
@@ -207,11 +223,25 @@ const handleEdit = async (id) => {
     console.log(data);
 
     document.getElementById("cat").value = data.category;
+
+    await fetchSubcategory(data.category)
+
     document.getElementById("subcat").value = data.subcategory
     document.getElementById("subcatname").value = data.productName
     document.getElementById("price").value = data.price
+
+    
     document.getElementById("productImage").src = './images/' + data.productImg
+  
+
     document.getElementById("desc").value = data.desc
+
+        
+
+    //data.tags map     v   document.getElementById(v).checked = true;
+    data.tags.map((v)=>{
+        document.getElementById(v).checked = true
+    })
 
     update = id;
 }

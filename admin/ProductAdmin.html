@@ -37,7 +37,7 @@
 
 
                     <div class="nav flex-column gap-2">
-                        
+
 
                         <a href="categoryAdmin.html" class="nav-link active">
                             <i class="bi bi-grid-fill"></i>
@@ -139,7 +139,7 @@
                                 <div class="col-md-6">
 
                                     <label class="form-label">
-                                      Subcategory
+                                        Subcategory
                                     </label><br>
                                     <select class="form-select" name="subcat" id="subcat">
                                         <option value="">---Select Subcategory---</option>
@@ -192,6 +192,45 @@
                                     <span id="desErr"></span>
                                 </div>
 
+                        <!-- Checkboxes-->
+                                <div class="col-12" style="display: flex;">
+                                  
+                                    <div style="margin-right: 20px;">
+                                        <input type="checkbox" name="checkbox" value="new" id="new">
+                                        <label class="form-label">
+                                            New
+                                        </label>
+                                    </div>
+
+                                    <div style="margin-right: 20px;">
+                                        <input type="checkbox" name="checkbox" value="Best_Seller" id="Best_Seller">
+                                        <label class="form-label">
+                                            Best Seller
+                                        </label>
+                                    </div>
+
+                                    <div style="margin-right: 20px;">
+                                        <input type="checkbox" class="checkbox" value="Winter" id="Winter">
+                                        <label class="form-label">
+                                            Winter
+                                        </label>
+                                    </div>
+
+                                    <div style="margin-right: 20px;">
+                                        <input type="checkbox" class="checkbox" value="Summer" id="Summer">
+                                        <label class="form-label">
+                                            Summer
+                                        </label>
+                                    </div>
+
+                                    <div style="margin-right: 20px;">
+                                        <input type="checkbox" class="checkbox" value="Monsoon" id="Monsoon">
+                                        <label class="form-label">
+                                            Monsoon
+                                        </label>
+                                    </div>
+
+                                </div>
 
                                 <div class="col-12">
 
@@ -223,7 +262,7 @@
 
                     <div class="card-header theme-header rounded-top-4">
 
-                        Category List
+                      Product List
 
                     </div>
 
@@ -248,6 +287,7 @@
                                         <th>Price</th>
                                         <th>Image</th>
                                         <th>Description</th>
+                                        <th>Checkboxes</th>
                                         <th>Action</th>
 
                                     </tr>
@@ -303,7 +343,7 @@
     </div>
 
     <script src="js/ProductAdmin.js"></script>
-    
+
 </body>
 
 </html>

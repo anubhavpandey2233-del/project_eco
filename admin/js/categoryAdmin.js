@@ -4,6 +4,7 @@ const handlesubmit = async () => {
     let cat = document.getElementById("catname").value;
     let file1 = document.getElementById("file1").files[0];
     let desc = document.getElementById("desc").value;
+    
 
     let alreadyExistImg = document.getElementById("displayImg").src.split("/");
 

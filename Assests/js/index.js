@@ -41,10 +41,14 @@ const fetchProduct=async()=>{
     const response=await fetch("http://localhost:3000/products");
     const data=await response.json()
     console.log(data);
+    
+    let data1=data.filter((v1)=>(v1.tags.includes("new")))
 
     let print='';
 
-    data.map((v)=>{
+    
+   
+    data1.map((v)=>{
         print+=`
             <div class="col-sm-6 col-md-6 col-lg-3">
                 <div class="todayproduct">
@@ -86,8 +90,10 @@ const fetchTrendingProducts=async()=>{
     const response=await fetch("http://localhost:3000/products");
     const data=await response.json();
     console.log(data);
+
+    let data2=data.filter((v2)=>(v2.tags.includes("Best_Seller")))
     let print=''
-    data.map((v)=>{
+    data2.map((v)=>{
         print+= `
             <div class="col-sm-6 col-lg-3">
                 <div class="todayproduct">

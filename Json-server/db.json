@@ -21,31 +21,57 @@
   ],
   "products": [
     {
-      "category": "MGwgleDaeCA",
-      "subcategory": "gkFvnF2Z904",
-      "productName": "Laptop",
-      "price": "100",
-      "productImg": "istockphoto-178716575-612x612.jpg",
-      "desc": "This laptop is good",
-      "id": "xVCLSaCuZBY"
-    },
-    {
       "category": "4nH1P5SwJfA",
       "subcategory": "jbR-DvIiGEM",
       "productName": "toycar",
-      "price": "50",
+      "price": "10",
       "productImg": "car.jpg",
-      "desc": "mini cute toycar",
-      "id": "G24XZK_viAc"
+      "desc": "asdesf",
+      "tags": [
+        "new",
+        "Best_Seller",
+        "Winter",
+        "Summer"
+      ],
+      "id": "tswOcKw_f9c"
+    },
+    {
+      "category": "MGwgleDaeCA",
+      "subcategory": "gkFvnF2Z904",
+      "productName": "sadsfs",
+      "price": "100",
+      "productImg": "images.jpg",
+      "desc": "dfgf",
+      "tags": [
+        "Best_Seller",
+        "Winter"
+      ],
+      "id": "laU7EZFBAy8"
+    },
+    {
+      "category": "MGwgleDaeCA",
+      "subcategory": "gkFvnF2Z904",
+      "productName": "pc",
+      "price": "100",
+      "productImg": "images.jpg",
+      "desc": "sfddgfdhgn",
+      "tags": [
+        "Best_Seller",
+        "Winter"
+      ],
+      "id": "XroI4jn563w"
     },
     {
       "category": "CosOVwGsxmw",
       "subcategory": "MBq4efQJnYQ",
-      "productName": "Shirt",
-      "price": "150",
+      "productName": "shirt",
+      "price": "199",
       "productImg": "product1.jpg",
-      "desc": "girls trending shirt",
-      "id": "e6SRHbQcsTU"
+      "desc": "wqee",
+      "tags": [
+        "new"
+      ],
+      "id": "RUZtIq8eJwk"
     }
   ],
   "subcategory": [
