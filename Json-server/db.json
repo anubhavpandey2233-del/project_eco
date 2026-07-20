@@ -21,57 +21,54 @@
   ],
   "products": [
     {
-      "category": "4nH1P5SwJfA",
-      "subcategory": "jbR-DvIiGEM",
+      "category": "MGwgleDaeCA",
+      "subcategory": "gkFvnF2Z904",
       "productName": "toycar",
-      "price": "10",
-      "productImg": "car.jpg",
-      "desc": "asdesf",
+      "price": "100",
+      "productImg": [
+        "car.jpg",
+        "images.jpg"
+      ],
+      "desc": "dsfxdvcfbcb  ",
       "tags": [
         "new",
-        "Best_Seller",
-        "Winter",
-        "Summer"
+        "Best_Seller"
       ],
-      "id": "tswOcKw_f9c"
+      "id": "P_3jmK8wIH4"
     },
     {
       "category": "MGwgleDaeCA",
       "subcategory": "gkFvnF2Z904",
-      "productName": "sadsfs",
-      "price": "100",
-      "productImg": "images.jpg",
-      "desc": "dfgf",
-      "tags": [
-        "Best_Seller",
-        "Winter"
+      "productName": "toycar",
+      "price": "12",
+      "productImg": [
+        "istockphoto-178716575-612x612.jpg",
+        "product1.jpg"
       ],
-      "id": "laU7EZFBAy8"
-    },
-    {
-      "category": "MGwgleDaeCA",
-      "subcategory": "gkFvnF2Z904",
-      "productName": "pc",
-      "price": "100",
-      "productImg": "images.jpg",
-      "desc": "sfddgfdhgn",
+      "desc": "fdgbhnvnvb ",
       "tags": [
-        "Best_Seller",
-        "Winter"
+        "new",
+        "Best_Seller"
       ],
-      "id": "XroI4jn563w"
+      "id": "x0QqFT_j6Ik"
     },
     {
       "category": "CosOVwGsxmw",
       "subcategory": "MBq4efQJnYQ",
       "productName": "shirt",
-      "price": "199",
-      "productImg": "product1.jpg",
-      "desc": "wqee",
-      "tags": [
-        "new"
+      "price": "132",
+      "productImg": [
+        "product1.jpg",
+        "clothesCat.jpg",
+        "images.jpg",
+        "istockphoto-178716575-612x612.jpg"
       ],
-      "id": "RUZtIq8eJwk"
+      "desc": "gvcbgnhgvnbhmmfghfghf",
+      "tags": [
+        "new",
+        "Best_Seller"
+      ],
+      "id": "c4bUa21bLdQ"
     }
   ],
   "subcategory": [

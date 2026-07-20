@@ -1,26 +1,26 @@
 //window load   get     category
 //cData     map     v             
 
-/* <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                        <div class="cateimg">
-                            <a href="#">
-                                <img src="v.name" alt="">
+// /<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+//                         <div class="cateimg">
+//                             <a href="#">
+//                                 <img src="v.name" alt="">
 
-                            </a>
-                            <h3>v.name</h3>
-                        </div>
-                    </div> */
+//                             </a>
+//                             <h3>v.name</h3>
+//                         </div>
+//                     </div> 
 
 
-const fetchCategory=async()=>{
-    const response=await fetch("http://localhost:3000/category");
-    const data=await response.json()
+const fetchCategory = async () => {
+    const response = await fetch("http://localhost:3000/category");
+    const data = await response.json()
     console.log(data);
-    
-    let print=''
 
-    data.map((v,i)=>{
-        print+=`
+    let print = ''
+
+    data.map((v, i) => {
+        print += `
         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
             <div class="cateimg">
                 <a href="#">
@@ -32,24 +32,34 @@ const fetchCategory=async()=>{
         </div>
     `
     })
-    document.getElementById("displayCategoryData").innerHTML=print
+    document.getElementById("displayCategoryData").innerHTML = print
 
 
 }
 
-const fetchProduct=async()=>{
-    const response=await fetch("http://localhost:3000/products");
-    const data=await response.json()
+
+
+const handlequickAdd = (id) => {
+    console.log(id);
+
+    localStorage.setItem("Product_id", id)
+
+    window.location = "product_detain.html";
+
+}
+
+
+const fetchProduct = async () => {
+    const response = await fetch("http://localhost:3000/products");
+    const data = await response.json()
     console.log(data);
-    
-    let data1=data.filter((v1)=>(v1.tags.includes("new")))
 
-    let print='';
+    let data1 = data.filter((v1) => (v1.tags.includes("new")))
 
-    
-   
-    data1.map((v)=>{
-        print+=`
+    let print = '';
+
+    data1.map((v) => {
+        print += `
             <div class="col-sm-6 col-md-6 col-lg-3">
                 <div class="todayproduct">
                     <div class="productimg">
@@ -62,7 +72,7 @@ const fetchProduct=async()=>{
                             <i class="fa-regular fa-eye"></i>
 
                         </div>
-                        <a href="#" class="quick">Quick Add</a>
+                        <a href="#" class="quick" onclick="handlequickAdd('${v.id}')">Quick Add</a>
                     </div>
                     <div class="productdata">
                         <p>${v.productName}</p>
@@ -82,19 +92,19 @@ const fetchProduct=async()=>{
             </div>
         `
     })
-    document.getElementById("displayProducts").innerHTML=print
+    document.getElementById("displayProducts").innerHTML = print
 
 }
 
-const fetchTrendingProducts=async()=>{
-    const response=await fetch("http://localhost:3000/products");
-    const data=await response.json();
+const fetchTrendingProducts = async () => {
+    const response = await fetch("http://localhost:3000/products");
+    const data = await response.json();
     console.log(data);
 
-    let data2=data.filter((v2)=>(v2.tags.includes("Best_Seller")))
-    let print=''
-    data2.map((v)=>{
-        print+= `
+    let data2 = data.filter((v2) => (v2.tags.includes("Best_Seller")))
+    let print = ''
+    data2.map((v) => {
+        print += `
             <div class="col-sm-6 col-lg-3">
                 <div class="todayproduct">
                     <div class="productimg">
@@ -127,10 +137,10 @@ const fetchTrendingProducts=async()=>{
             </div>
         `
     })
-    document.getElementById("displayTrendingProduct").innerHTML=print
+    document.getElementById("displayTrendingProduct").innerHTML = print
 }
 
-window.onload=()=>{
+window.onload = () => {
     fetchCategory()
     fetchProduct()
     fetchTrendingProducts()

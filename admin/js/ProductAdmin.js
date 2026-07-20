@@ -7,9 +7,23 @@ const productSubmit = async () => {
     let subcategory = document.getElementById("subcat").value;
     let productName = document.getElementById("subcatname").value;
     let price = document.getElementById("price").value;
-    let productImg = document.getElementById("fileImage").files[0]; //files[0] se file ka pura object mil jata hai
+    let productImg = document.querySelectorAll('input[type="file"]'); //files[0] se file ka pura object mil jata hai
     let desc = document.getElementById("desc").value;
     let checkBox = document.querySelectorAll('input[type="checkbox"]:checked')
+
+    console.log(productImg);
+
+    let imgArray = [];
+
+    for (let i = 0; i < productImg.length; i++) {
+        console.log(productImg[i].files[0].name);
+
+        imgArray.push(productImg[i].files[0].name)
+
+    }
+
+    console.log(imgArray);
+
 
     let array = [];
 
@@ -18,8 +32,8 @@ const productSubmit = async () => {
     }
     console.log(array);
 
-    
-    
+
+
     let alreadyExistImg = document.getElementById("productImage").src.split("/");
     let arr = alreadyExistImg
     console.log(alreadyExistImg);
@@ -59,34 +73,34 @@ const productSubmit = async () => {
             formErr = true;
         }
     }
-    if (!productImg) {
+    // if (!productImg) {
 
-        if (update === null) {
-            document.getElementById("fileErr").innerHTML = "Please choose file"
-            formErr = true;
-        }
-    } else {
-        const allowedfiles = ['image/jpeg', 'image/jpg', 'image/png']
+    //     if (update === null) {
+    //         document.getElementById("fileErr").innerHTML = "Please choose file"
+    //         formErr = true;
+    //     }
+    // } else {
+    //     const allowedfiles = ['image/jpeg', 'image/jpg', 'image/png']
 
-        console.log(productImg.type, allowedfiles.includes(productImg.type));
+    //     console.log(productImg.type, allowedfiles.includes(productImg.type));
 
-        if (allowedfiles.includes(productImg.type)) {
-            document.getElementById("fileErr").innerHTML = ""
+    //     if (allowedfiles.includes(productImg.type)) {
+    //         document.getElementById("fileErr").innerHTML = ""
 
-            if (productImg.size < 2 * 1024 * 1024) {
-                document.getElementById("fileErr").innerHTML = ""
-            } else {
-                document.getElementById("fileErr").innerHTML = "enter files under 2 MB"
-                formErr = true;
-            }
+    //         if (productImg.size < 2 * 1024 * 1024) {
+    //             document.getElementById("fileErr").innerHTML = ""
+    //         } else {
+    //             document.getElementById("fileErr").innerHTML = "enter files under 2 MB"
+    //             formErr = true;
+    //         }
 
-        } else {
-            document.getElementById("fileErr").innerHTML = "Please enter only .jpeg,.jpg or png type files"
-            formErr = true;
-        }
+    //     } else {
+    //         document.getElementById("fileErr").innerHTML = "Please enter only .jpeg,.jpg or png type files"
+    //         formErr = true;
+    //     }
 
 
-    }
+    // }
 
     if (desc === '') {
         document.getElementById("desErr").innerHTML = "Please write description here.."
@@ -114,7 +128,7 @@ const productSubmit = async () => {
 
         console.log(productImg);
         console.log(arr);
-        
+
 
         let productImg1 = document.getElementById("fileImage");
         let obj = {
@@ -122,9 +136,10 @@ const productSubmit = async () => {
             subcategory,
             productName,
             price,
-            productImg: productImg1?.files[0]?.name ? productImg1?.files[0]?.name : arr[arr.length - 1],
+            // productImg: productImg1?.files[0]?.name ? productImg1?.files[0]?.name : arr[arr.length - 1],
+            productImg: imgArray,
             desc,
-            tags:array
+            tags: array
         }
 
         if (update) {
@@ -172,8 +187,6 @@ const productTable = async () => {
     console.log(data, cdata, sdata);
 
 
-
-
     let print = '';
 
     data.map((v, i) => {
@@ -184,7 +197,19 @@ const productTable = async () => {
                 <td>${sdata?.find((v2) => v2.id === v.subcategory)?.subcat_name}</td>
                 <td>${v.productName}</td>
                 <td>${v.price}</td>
-                <td><img src="./images/${v.productImg}"></td>
+                <td>
+            `
+
+        v.productImg.map((v1) => {
+            print += `
+
+                     <img src="./images/${v1}">
+                     `
+                })
+
+
+
+    print += `</td>
                 <td>${v.desc}</td>
                 <td>${v.tags}</td>
                  <td>
@@ -199,7 +224,7 @@ const productTable = async () => {
                 </td>
             </tr>
         `
-    })
+})
     document.getElementById("displayProductTable").innerHTML = print
 
 }
@@ -230,16 +255,16 @@ const handleEdit = async (id) => {
     document.getElementById("subcatname").value = data.productName
     document.getElementById("price").value = data.price
 
-    
+
     document.getElementById("productImage").src = './images/' + data.productImg
-  
+
 
     document.getElementById("desc").value = data.desc
 
-        
+
 
     //data.tags map     v   document.getElementById(v).checked = true;
-    data.tags.map((v)=>{
+    data.tags.map((v) => {
         document.getElementById(v).checked = true
     })
 
@@ -288,6 +313,47 @@ const fetchSubcategory = async () => {
 
 }
 
+
+const handleMultipleFile = () => {
+
+    const allfileEle = document.getElementById("allFiles")
+
+    const divEle = document.createElement("div")
+
+    const inpFile = document.createElement("input");
+    inpFile.setAttribute("type", "file");
+    inpFile.setAttribute("class", "form-control");
+    inpFile.setAttribute("id", "fileImage")
+
+    const plusBtn = document.createElement("button")
+    plusBtn.setAttribute("onclick", 'handleMultipleFile()')
+    plusBtn.setAttribute("class", "addrembtn")
+    plusBtn.textContent = '+';
+
+    const minBtn = document.createElement("button");
+    minBtn.setAttribute("class", "addrembtn")
+    minBtn.textContent = '-';
+    minBtn.addEventListener("click", function () {
+        divEle.remove()
+    })
+
+
+
+    const imgEle = document.createElement("img")
+    imgEle.setAttribute("class", "imageadd")
+
+
+    divEle.appendChild(inpFile)
+    divEle.appendChild(plusBtn)
+    divEle.appendChild(minBtn)
+
+    allfileEle.appendChild(imgEle)
+    allfileEle.appendChild(divEle)
+
+
+
+
+}
 
 
 window.onload = () => {

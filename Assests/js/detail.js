@@ -1,33 +1,39 @@
 const productCart = async () => {
-    const response = await fetch("http://localhost:3000/products");
+    //local get product id
+
+   let id= localStorage.getItem("Product_id")
+//    console.log(localStorage.getItem("quickId"));
+   
+
+//    localStorage.setItem("quickId",id)
+
+    const response = await fetch(`http://localhost:3000/products/${id}`);
     const data = await response.json()
-
-    let print = ''
-
-    data.map((v) => {
-        print += `
+    console.log(data);
+    
+    let print = `
              <div class="col-sm-12 col-lg-6">
                         
                         <div class="product-images">
                             <div class="main-image">
                                 <span class="discount">25% OFF</span>
-                                <img src="./admin/images/${v.productImg}" alt="Women's Sweatshirt">
+                                <img src="./admin/images/${data.productImg}" alt="Women's Sweatshirt">
 
                             </div>
 
 
                             <div class="thumb-images">
-                                <img src="./admin/images/${v.productImg}" alt="">
-                                <img src="./admin/images/${v.productImg}" alt="">
-                                <img src="./admin/images/${v.productImg}" alt="">
-                                <img src="./admin/images/${v.productImg}" alt="">
+                                <img src="./admin/images/${data.productImg}" alt="">
+                                <img src="./admin/images/${data.productImg}" alt="">
+                                <img src="./admin/images/${data.productImg}" alt="">
+                                <img src="./admin/images/${data.productImg}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-lg-6">
                     
                         <div class="product-details">
-                            <h1>${v.productName}</h1>
+                            <h1>${data.productName}</h1>
 
                             <p class="star">
                                 <i class="fa-solid fa-star"></i>
@@ -42,7 +48,7 @@ const productCart = async () => {
 
                             <div class="price">
                                 
-                              Rs.${v.price}
+                              Rs.${data.price}
                             </div>
 
                             <p class="desc">
@@ -74,7 +80,7 @@ const productCart = async () => {
                     </div>
         `
 
-    })
+
     document.getElementById("cartProduct").innerHTML = print
 }
 

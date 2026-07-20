@@ -14,6 +14,18 @@
 
     <link rel="stylesheet" href="./css/categoryAdmin.css">
 
+    <style>
+        .addrembtn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid gray;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: white;
+        }
+     
+    </style>
+
 </head>
 
 <body>
@@ -159,13 +171,18 @@
                                         id="subcatname">
                                     <span id="nameErr"></span>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6" id="allFiles">
 
                                     <label class="form-label">
                                         Image
                                     </label>
 
-                                    <input type="file" class="form-control" id="fileImage">
+                                    <div>
+                                        <input type="file" class="form-control" name="pimages" id="fileImage">
+                                        <button onclick="handleMultipleFile()" class="addrembtn">+</button>
+
+                                    </div>
+
                                     <img src="" alt="" id="productImage" style="width: 50px; height: 50px;">
                                     <span id="fileErr"></span>
                                 </div>
@@ -192,9 +209,9 @@
                                     <span id="desErr"></span>
                                 </div>
 
-                        <!-- Checkboxes-->
+                                <!-- Checkboxes-->
                                 <div class="col-12" style="display: flex;">
-                                  
+
                                     <div style="margin-right: 20px;">
                                         <input type="checkbox" name="checkbox" value="new" id="new">
                                         <label class="form-label">
@@ -262,7 +279,7 @@
 
                     <div class="card-header theme-header rounded-top-4">
 
-                      Product List
+                        Product List
 
                     </div>
 
