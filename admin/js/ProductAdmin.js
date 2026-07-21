@@ -255,9 +255,7 @@ const handleEdit = async (id) => {
     document.getElementById("subcatname").value = data.productName
     document.getElementById("price").value = data.price
 
-
-    document.getElementById("productImage").src = './images/' + data.productImg
-
+    document.getElementById("productImage").src = "./images/" + data.productImg.files;
 
     document.getElementById("desc").value = data.desc
 
@@ -323,7 +321,7 @@ const handleMultipleFile = () => {
     const inpFile = document.createElement("input");
     inpFile.setAttribute("type", "file");
     inpFile.setAttribute("class", "form-control");
-    inpFile.setAttribute("id", "fileImage")
+    inpFile.setAttribute("id", "fileImg")
 
     const plusBtn = document.createElement("button")
     plusBtn.setAttribute("onclick", 'handleMultipleFile()')
