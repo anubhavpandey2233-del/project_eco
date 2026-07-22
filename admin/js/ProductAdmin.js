@@ -11,18 +11,42 @@ const productSubmit = async () => {
     let desc = document.getElementById("desc").value;
     let checkBox = document.querySelectorAll('input[type="checkbox"]:checked')
 
+    let productImage = document.getElementsByName("productImage");
+
     console.log(productImg);
 
-    let imgArray = [];
+    let imgMulti = []
 
-    for (let i = 0; i < productImg.length; i++) {
-        console.log(productImg[i].files[0].name);
+    for (let i = 0; i < productImage.length; i++) {
 
-        imgArray.push(productImg[i].files[0].name)
+        let imagesPath = productImage[i].src.split("/");
+        let arr=imagesPath
 
+        let splitImgPath=arr[arr.length-1];
+
+        console.log(arr);
+  
+     
+
+
+        imgMulti.push(splitImgPath)
+
+        console.log(productImage[i].src);
     }
+    console.log(imgMulti);
 
-    console.log(imgArray);
+
+
+    // let imgArray = [];
+
+    // for (let i = 0; i < productImg.length; i++) {
+    //     console.log(productImg[i].files[0].name);
+
+    //     imgArray.push(productImg[i].files[0].name)
+
+    // }
+
+    // console.log(imgArray);
 
 
     let array = [];
@@ -34,9 +58,9 @@ const productSubmit = async () => {
 
 
 
-    let alreadyExistImg = document.getElementById("productImage").src.split("/");
-    let arr = alreadyExistImg
-    console.log(alreadyExistImg);
+    // let alreadyExistImg = document.getElementById("productImage").src.split("/");
+    // let arr = alreadyExistImg
+    // console.log(alreadyExistImg);
 
     // console.log(category, subcategory, productName, productImg, desc, price, checkBox);
     let formErr = false;
@@ -73,6 +97,7 @@ const productSubmit = async () => {
             formErr = true;
         }
     }
+
     // if (!productImg) {
 
     //     if (update === null) {
@@ -126,8 +151,8 @@ const productSubmit = async () => {
 
     if (!formErr) {
 
-        console.log(productImg);
-        console.log(arr);
+        // console.log(productImg);
+        // console.log(arr);
 
 
         let productImg1 = document.getElementById("fileImage");
@@ -137,7 +162,7 @@ const productSubmit = async () => {
             productName,
             price,
             // productImg: productImg1?.files[0]?.name ? productImg1?.files[0]?.name : arr[arr.length - 1],
-            productImg: imgArray,
+            productImg: imgMulti,
             desc,
             tags: array
         }
@@ -205,11 +230,11 @@ const productTable = async () => {
 
                      <img src="./images/${v1}">
                      `
-                })
+        })
 
 
 
-    print += `</td>
+        print += `</td>
                 <td>${v.desc}</td>
                 <td>${v.tags}</td>
                  <td>
@@ -224,7 +249,7 @@ const productTable = async () => {
                 </td>
             </tr>
         `
-})
+    })
     document.getElementById("displayProductTable").innerHTML = print
 
 }
@@ -255,7 +280,15 @@ const handleEdit = async (id) => {
     document.getElementById("subcatname").value = data.productName
     document.getElementById("price").value = data.price
 
-    document.getElementById("productImage").src = "./images/" + data.productImg.files;
+    document.getElementById("allFiles").innerHTML = ''
+
+    for (let i = 0; i < data.productImg.length; i++) {
+        handleMultipleFile(data.productImg[i]);
+    }
+
+
+    // document.getElementById("productImage").src = './images/' + data.productImg
+
 
     document.getElementById("desc").value = data.desc
 
@@ -312,7 +345,7 @@ const fetchSubcategory = async () => {
 }
 
 
-const handleMultipleFile = () => {
+const handleMultipleFile = (img) => {
 
     const allfileEle = document.getElementById("allFiles")
 
@@ -321,15 +354,17 @@ const handleMultipleFile = () => {
     const inpFile = document.createElement("input");
     inpFile.setAttribute("type", "file");
     inpFile.setAttribute("class", "form-control");
-    inpFile.setAttribute("id", "fileImg")
+    inpFile.setAttribute("id", "fileImage")
 
     const plusBtn = document.createElement("button")
     plusBtn.setAttribute("onclick", 'handleMultipleFile()')
     plusBtn.setAttribute("class", "addrembtn")
+    plusBtn.setAttribute("type", "button")
     plusBtn.textContent = '+';
 
     const minBtn = document.createElement("button");
     minBtn.setAttribute("class", "addrembtn")
+    minBtn.setAttribute("type", "button")
     minBtn.textContent = '-';
     minBtn.addEventListener("click", function () {
         divEle.remove()
@@ -339,16 +374,23 @@ const handleMultipleFile = () => {
 
     const imgEle = document.createElement("img")
     imgEle.setAttribute("class", "imageadd")
+    imgEle.setAttribute("src", `./images/${img}`)
+    imgEle.setAttribute("name", "productImage")
+
+    inpFile.addEventListener("change", function () {
+        console.log("fjdgbf", inpFile.files[0].name);
+        imgEle.setAttribute("src", `./images/${inpFile.files[0].name}`)
+    })
+
+
 
 
     divEle.appendChild(inpFile)
     divEle.appendChild(plusBtn)
     divEle.appendChild(minBtn)
 
-    allfileEle.appendChild(imgEle)
+    divEle.appendChild(imgEle)
     allfileEle.appendChild(divEle)
-
-
 
 
 }
