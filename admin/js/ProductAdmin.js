@@ -13,27 +13,71 @@ const productSubmit = async () => {
 
     let productImage = document.getElementsByName("productImage");
 
-    console.log(productImg);
+    console.log(productImg, productImg.length);
 
     let imgMulti = []
 
     for (let i = 0; i < productImage.length; i++) {
 
         let imagesPath = productImage[i].src.split("/");
-        let arr=imagesPath
+        let arr = imagesPath
 
-        let splitImgPath=arr[arr.length-1];
+        let splitImgPath = arr[arr.length - 1];
 
-        console.log(arr);
-  
-     
-
+        console.log(arr)
 
         imgMulti.push(splitImgPath)
 
         console.log(productImage[i].src);
     }
     console.log(imgMulti);
+
+
+
+    for (let i = 0; i < productImg.length; i++) {
+        // console.log(productImg[i].files, productImg[i].files[0], productImg[i].files[0].size, productImg[i].files[0].type);
+
+        const allFiles = document.getElementById("allFiles");
+
+        console.log(allFiles.childNodes[i + 1].childNodes[3]);
+        console.log(productImg.length);
+
+
+        if (productImg[i].files.length === 0) {
+
+            allFiles.childNodes[i + 1].childNodes[3].innerHTML = 'Please select any image'
+
+        } else {
+
+        //    let productImg1 = document.querySelectorAll('input[type="file"]').files[0]
+
+            const allowedfiles = ['image/jpeg', 'image/jpg', 'image/png']
+
+            if (allowedfiles.includes(productImg[i].files[0].type)) {
+
+                allFiles.childNodes[i + 1].childNodes[3].innerHTML = ''
+
+                if (productImg[i].files[0].size < 2 * 1024 * 1024) {
+
+                    allFiles.childNodes[i + 1].childNodes[3].innerHTML = ''
+
+                } else {
+
+                    allFiles.childNodes[i + 1].childNodes[3].innerHTML = "enter files under 2 MB"
+
+                }
+            } else {
+                allFiles.childNodes[i + 1].childNodes[3].innerHTML = "Please enter only .jpeg,.jpg or png type files"
+
+            }
+
+        }
+
+
+
+    }
+
+
 
 
 
@@ -97,6 +141,29 @@ const productSubmit = async () => {
             formErr = true;
         }
     }
+
+    //By sir...
+    // for (let i=0; i<productImg.length; i++) {
+    //     console.log(productImg, productImg[i].files, productImg[i].files.length);
+    //     const allFilesRef = document.getElementById("allFiles");
+
+    //     if (productImg[i].files.length == 0) {
+
+
+    //         console.log(allFilesRef.childNodes, allFilesRef.childNodes[i+1].childNodes[3], productImg.parentNode);
+
+    //         allFilesRef.childNodes[i+1].childNodes[3].innerHTML = "Please select file."
+
+    //     } else {
+    //         allFilesRef.childNodes[i+1].childNodes[3].innerHTML = ""
+    //     }
+    // }
+
+
+
+
+
+
 
     // if (!productImg) {
 
@@ -382,12 +449,16 @@ const handleMultipleFile = (img) => {
         imgEle.setAttribute("src", `./images/${inpFile.files[0].name}`)
     })
 
+    const spanErr = document.createElement("span")
+    // spanErr.setAttribute("")
+
 
 
 
     divEle.appendChild(inpFile)
     divEle.appendChild(plusBtn)
     divEle.appendChild(minBtn)
+    divEle.appendChild(spanErr)
 
     divEle.appendChild(imgEle)
     allfileEle.appendChild(divEle)

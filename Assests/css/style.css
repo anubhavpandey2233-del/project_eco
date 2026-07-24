@@ -3,7 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* ----------------------slider---------------------- */
 
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ----------------------slider end ------------------- */
 body {
     font-family: "DM Sans", sans-serif;
 }

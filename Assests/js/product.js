@@ -18,7 +18,7 @@ const fetchProductItem = async () => {
         print += `
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card">
-                <a href="#"><img src="./admin/images/${v.productImg}" class="img-fluid" alt=""></a>
+                <a href="#"><img src="./admin/images/${v.productImg[0]}" class="img-fluid" alt=""></a>
                 <h4>${v.productName}</h4>
                 <p>₹${v.price}</p>
                 <a href="#" class="cart" onclick="handleBuy('${v.id}')">Buy Now</a>
