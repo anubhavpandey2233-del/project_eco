@@ -87,18 +87,12 @@ const productCart = async () => {
 let print = '';
 
 data.productImg.map((v) => {
-print += `
+    print+= `
             
-                    <div class="swiper-slide"><img src="./admin/images/${v}" alt=""></div>
-                    `
+        <div class="swiper-slide ProductImgSlider"><img src="./admin/images/${v}" alt=""></div>
+    `
                     
 })
-
-                    
-                
-    
-    
-
     document.getElementById("allProuctImgs").innerHTML = print
 }
 
