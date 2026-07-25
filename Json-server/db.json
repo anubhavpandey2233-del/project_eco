@@ -111,5 +111,37 @@
       "id": "MBq4efQJnYQ"
     }
   ],
+  "users": [
+    {
+      "name": "khanak IT",
+      "email": "khanakitclass@gmail.com",
+      "password": "Khanak@123",
+      "id": "Xplvlf9nxPg"
+    },
+    {
+      "name": "Palak",
+      "email": "palak@gmail.com",
+      "password": "Palak@123",
+      "id": "n2isIEkdJYY"
+    },
+    {
+      "name": "Anubhav",
+      "email": "anubhav@gmail.com",
+      "password": "Anubhav@123",
+      "id": "7BCGtyEsutw"
+    },
+    {
+      "name": "komal",
+      "email": "komal@1gmail.com",
+      "password": "Komal@123",
+      "id": "7jisFMJSE_k"
+    },
+    {
+      "name": "Palak",
+      "email": "palak12@gmail.com",
+      "password": "Palak@123",
+      "id": "8MlDgKgWRfA"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

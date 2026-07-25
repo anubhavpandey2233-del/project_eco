@@ -1,10 +1,10 @@
-function handlelogin() {
-   
+const handlelogin = async () => {
+
 
     let email = document.getElementById("email").value;
     let password = document.getElementById("pass").value;
-    
-    let formErr=false;
+
+    let formErr = false;
     console.log(email, password);
 
     if (email === '') {
@@ -18,7 +18,7 @@ function handlelogin() {
             document.getElementById("emailErr").innerHTML = "";
         } else {
             document.getElementById("emailErr").innerHTML = "please enter your valid email.";
-            formErr=true;
+            formErr = true;
         }
 
     }
@@ -33,16 +33,46 @@ function handlelogin() {
             document.getElementById("passwordErr").innerHTML = ""
         } else {
             document.getElementById("passwordErr").innerHTML = "please enter your strong password.";
-            formErr=true;
+            formErr = true;
         }
     }
 
-    if(formErr==false){
-        alert("your form sumitted successfully.")
-        return true;
+    // if (formErr == false) {
+
+    //     const response = await fetch("http://localhost:3000/users");
+    //     const data=await response.json();
+    //     console.log(data);
+
+
+
+    // }
+
+
+    const response = await fetch("http://localhost:3000/users");
+    const uData = await response.json();
+    console.log(uData);
+
+    let flag = false;
+
+    let loginId=''
+
+    uData.map((v) => {
+        if (v.email === email && v.password === password) {
+            flag = true;
+            loginId=v.id
+        }
+    })
+
+
+
+
+    if (flag === true) {
+        localStorage.setItem("id", loginId)
+
+        window.location.href="index.html"
+
     } else{
-        return false;
+        alert("wrong email or password")
     }
+ 
 }
-
-

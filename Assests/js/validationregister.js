@@ -1,5 +1,5 @@
-function handleregister() {
-    
+const handleregister = async () => {
+
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("pass").value;
@@ -57,12 +57,32 @@ function handleregister() {
     }
 
     if (formErr == false) {
-        alert("your form sumitted successfully.")
+        let obj = {
+            name,
+            email,
+            password
+        }
 
-        return true
-    } else {
-        return false
+        const response = await fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        })
+        const data = await response.json(obj)
+
+        console.log(data);
+
+        if (data) {
+            alert("form submitted successfully")
+            window.location.href = "login.html"
+        }
+
     }
+
+
+
 
 }
 

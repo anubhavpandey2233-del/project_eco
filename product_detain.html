@@ -18,14 +18,14 @@
     <link rel="stylesheet" href="Assests/css/style.css">
     <link rel="stylesheet" href="Assests/css/media.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" /> -->
-     <style>
-        .ProductImgSlider img{
+    <style>
+        .ProductImgSlider img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             object-position: center;
         }
-     </style>
+    </style>
 </head>
 
 <body>
@@ -86,115 +86,85 @@
     <main id="product-page">
 
         <section>
-            <!-- <div class="container">
-                <div class="row" id="cartProduct"> -->
-            <!-- <div class="col-sm-12 col-lg-6">
-                        
-                        <div class="product-images">
-                            <div class="main-image">
-                                <span class="discount">25% OFF</span>
-                                <img src="Assests/images/product-2.jpg" alt="Women's Sweatshirt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+
+
+                        <div class="swiper productImages">
+
+                            <div class="swiper-wrapper" id="allProuctImgs">
+
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
 
                             </div>
 
+                            <div class="swiper-pagination"></div>
 
-                            <div class="thumb-images">
-                                <img src="Assests/images/product-3_2.jpg" alt="">
-                                <img src="Assests/images/product-3_2.jpg" alt="">
-                                <img src="Assests/images/product-3_2.jpg" alt="">
-                                <img src="Assests/images/product-3_2.jpg" alt="">
-                            </div>
+
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
+
                         </div>
+
                     </div>
                     <div class="col-sm-12 col-lg-6">
-                    
-                        <div class="product-details">
-                            <h1>Women's Gray Sweatshirt</h1>
 
-                            <p class="star">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span>(128 Reviews)</span>
-                            </p>
+                        <div id="cartProduct">
+                            <div class="product-details">
+                                <h1 id="pTitle"></h1>
+
+                                <p class="star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>(128 Reviews)</span>
+                                </p>
 
 
 
-                            <div class="price">
-                                ₹1,499
-                                <del>₹1,999</del>
-                                <span class="offer">25% OFF</span>
+                                <div class="price" id="pPrice">
+                                   
+                                    
+                                </div>
+
+                                <p class="desc" id="pDescription">
+                                   
+                                </p>
+
+                                <h3>Quantity</h3>
+                                <div class="qty" onclick="handleQuantity()">
+                                    <button onclick="minbtn()" id="btnMin">-</button>
+                                    <span id="spanNum">1</span>
+                                    <button onclick="plusbtn()" id="btnplus">+</button>
+
+                                    <span id="qtyErr"></span>
+                                </div>
+
+
+                                <div class="buttons">
+                                    <a href="#" class="cart">Add To Cart</a>
+                                    <a href="#" class="buy">Buy Now</a>
+                                </div>
+
+                                <div class="features">
+                                    <div>🚚 Free Delivery</div>
+                                    <div>🔄 7 Days Return</div>
+                                    <div>🛡️ Secure Payment</div>
+                                </div>
                             </div>
 
-                            <p class="desc">
-                                Premium quality women's sweatshirt made from soft cotton fabric.
-                                Comfortable, stylish and perfect for casual wear.
-                            </p>
-
-                           
-                            <h3>Color</h3>
-                            <div class="colors">
-                                <span class="blue"></span>
-                                <span class="black"></span>
-                                <span class="pink"></span>
-                            </div>
-
-                            
-                            <h3>Size</h3>
-                            <div class="sizes">
-                                <button>S</button>
-                                <button>M</button>
-                                <button>L</button>
-                                <button>XL</button>
-                            </div>
-
-                            
-                            <h3>Quantity</h3>
-                            <div class="qty">
-                                <button>-</button>
-                                <span>1</span>
-                                <button>+</button>
-                            </div>
-
-                         
-                            <div class="buttons">
-                                <a href="#" class="cart">Add To Cart</a>
-                                <a href="#" class="buy">Buy Now</a>
-                            </div>
-
-                            <div class="features">
-                                <div>🚚 Free Delivery</div>
-                                <div>🔄 7 Days Return</div>
-                                <div>🛡️ Secure Payment</div>
-                            </div>
                         </div>
+                    </div>
 
-                    </div> -->
-
-
-            <div class="swiper productImages">
-
-                <div class="swiper-wrapper" id="allProuctImgs">
-
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
 
                 </div>
-
-                <div class="swiper-pagination"></div>
-
-
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-
             </div>
-
-            <!-- </div>
-            </div> -->
         </section>
 
 

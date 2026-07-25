@@ -11,9 +11,14 @@
 }
 
 
+.productImages{
+    width: 100%;
+    height: 100%;
+}
 
-
-
+#qtyErr{
+    color: red;
+}
 
 
 
