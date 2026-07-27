@@ -36,31 +36,6 @@ const productCart = async () => {
 
 }
 
-
-const handleQuantity = () => {
-    // const plusBtn = document.createElement("button")
-    // plusBtn.setAttribute("type", "button")
-    // plusBtn.textContent = "+"
-
-
-    const spanEle = document.createElement("span")
-
-    // const minBtn = document.createElement("button")
-    // minBtn.setAttribute("type", "button")
-    // minBtn.textContent = "-";
-    // minBtn.setAttribute("onclick", "handleMinQty()")
-
-
-    const divEle = document.createAttribute("div")
-    // divEle.setAttribute("class", "qty")
-
-    // divEle.appendChild(plusBtn)
-    // divEle.appendChild(minBtn)  
-    // divEle.appendChild(spanEle)
-
-
-}
-
 const plusbtn = () => {
 
     let spanQty = parseInt(document.getElementById("spanNum").innerHTML);
@@ -109,6 +84,90 @@ const minbtn = () => {
     }
 
 }
+
+
+const handleCart = async () => {
+    let userId = localStorage.getItem("id");
+    let productId = localStorage.getItem("Product_id");
+    let quantity =parseInt( document.getElementById("spanNum").innerHTML);
+
+    console.log(userId, productId, quantity);
+
+    let obj = {
+        userId,
+        items: [
+            {
+                "pid": productId,
+                "quantity": parseInt(quantity)
+            }
+        ]
+    }
+
+    const res = await fetch("http://localhost:3000/cart")
+    const cData = await res.json()
+    console.log(cData);
+
+    const cartData = cData.find((v) => v.userId == userId)
+    console.log(cartData);
+
+
+    if (cartData) {
+
+        const pData = cartData.items.findIndex((v) => v.pid === productId);
+
+        console.log(pData);
+
+
+        if (pData === -1) {
+            cartData.items.push({
+                pid: productId,
+                quantity: parseInt(quantity)
+            })
+        } else {
+
+            cartData.items[pData].quantity += quantity
+        }
+
+        //1
+
+
+        //fetch     PUT     http://localhost:3000/cart/ cartData.id         body: JSON.stringify(cartData)
+
+        // console.log(cartData);
+
+        //Update
+
+        const resp = await fetch(`http://localhost:3000/cart/${cartData.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(cartData)
+
+        })
+        const newItemdata = await resp.json()
+        console.log(newItemdata);
+
+
+
+    } else {
+        const response = await fetch("http://localhost:3000/cart", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        }
+        )
+        const data = await response.json()
+        console.log(data);
+    }
+
+
+
+
+}
+
 
 
 

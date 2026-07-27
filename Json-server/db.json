@@ -142,5 +142,22 @@
       "password": "Palak@123",
       "id": "8MlDgKgWRfA"
     }
-  ]
+  ],
+  "cart": [
+    {
+      "userId": "Xplvlf9nxPg",
+      "items": [
+        {
+          "pid": "jxuPI5i6WLU",
+          "quantity": 2
+        },
+        {
+          "pid": "nHICaOmbAOM",
+          "quantity": 5
+        }
+      ],
+      "id": "iGGiaFasDHY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

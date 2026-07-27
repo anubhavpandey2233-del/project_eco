@@ -64,8 +64,8 @@ const fetchProduct = async () => {
                 <div class="todayproduct">
                     <div class="productimg">
                         <div class="discount">25%-</div>
-                        <img src="./admin/images/${v.productImg}" alt="">
-                        <img src="./admin/images/${v.productImg}" class="secondimg" alt="">
+                        <img src="./admin/images/${v.productImg[0]}" alt="">
+                        <img src="./admin/images/${v.productImg[1]}" class="secondimg" alt="">
                         <div class="like">
                             <i class="fa-regular fa-heart"></i>
                             <i class="fa-solid fa-arrow-right-arrow-left"></i>
@@ -96,6 +96,8 @@ const fetchProduct = async () => {
 
 }
 
+
+
 const fetchTrendingProducts = async () => {
     const response = await fetch("http://localhost:3000/products");
     const data = await response.json();
@@ -109,15 +111,15 @@ const fetchTrendingProducts = async () => {
                 <div class="todayproduct">
                     <div class="productimg">
                         <div class="discount">25%-</div>
-                        <img src="./admin/images/${v.productImg}" alt="">
-                        <img src="./admin/images/${v.productImg}" class="secondimg" alt="">
+                        <img src="./admin/images/${v.productImg[0]}" alt="">
+                        <img src="./admin/images/${v.productImg[1]}" class="secondimg" alt="">
                         <div class="like">
                             <i class="fa-regular fa-heart"></i>
                             <i class="fa-solid fa-arrow-right-arrow-left"></i>
                             <i class="fa-regular fa-eye"></i>
 
                         </div>
-                        <a href="#" class="quick">Quick Add</a>
+                        <a href="#" class="quick"  onclick="handlequickAdd('${v.id}')">Quick Add</a>
                     </div>
                     <div class="productdata">
                         <p>${v.productName}</p>
@@ -140,9 +142,39 @@ const fetchTrendingProducts = async () => {
     document.getElementById("displayTrendingProduct").innerHTML = print
 }
 
+const handleLogout=()=>{
+    localStorage.removeItem("id");
+    window.location.href='' //confusion
+}
+
+const Authentication = () => {
+    let auth = localStorage.getItem("id");
+    let print = '';
+
+    if (auth) {
+        print += `
+            <a href="#" id="logoutBtn" onclick="handleLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+        `
+    } else {
+       print+=`
+         <a href="login.html">
+            <i class="fa-regular fa-user"
+                style="margin-right: 10px;">
+            </i>
+            Login
+        </a>
+       `
+    }
+
+
+    document.getElementById("auth").innerHTML = print
+}
 
 window.onload = () => {
     fetchCategory()
     fetchProduct()
     fetchTrendingProducts()
+    Authentication()
 }   
