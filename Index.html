@@ -20,19 +20,19 @@
 </head>
 
 <body>
-    <header> 
+    <header>
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <div class="logo">
                         <a class="navbar-brand logo" href="#">
-                        <img src="Assests/images/logo.png" alt="">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                            <img src="Assests/images/logo.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -51,18 +51,22 @@
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="about.html">About US</a>
                             </li>
-                            
+
 
                         </ul>
 
-                       <div class="fav_cart">
-                         <ul class="icons">
-                            <!-- <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li> -->
-                             <li><a href="login.html"><i class="fa-regular fa-user" style="margin-right: 10px;"></i>Login here</a></li>
-                            <!-- <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                            <li><a href="#"></a><i class="fa-solid fa-cart-shopping"></i></li> -->
-                        </ul>
-                       </div>
+                        <div class="fav_cart ">
+                            <ul class="icons">
+
+                                <li><a href="login.html"><i class="fa-regular fa-user"
+                                            style="margin-right: 10px;"></i>Login here</a></li>
+                                <li>
+                                    <a href="#" id="logoutBtn" >
+                                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                         <!-- <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button class="btn btn-outline-success" type="submit">Search</button>
@@ -351,7 +355,7 @@
             <div class="container">
                 <h2 class="main-title">Top Trending</h2>
                 <p class="sub-title">Browse our Top Trending picks loved by all.</p>
-                <div class="row" id="displayTrendingProduct">
+                <div class="row" id="z">
                     <!-- <div class="col-sm-6 col-lg-3">
                         <div class="todayproduct">
                             <div class="productimg">
@@ -623,19 +627,19 @@
                                 <form action="">
                                     <input type="email" placeholder="enter email">
 
-                                   
-                                        <button type="submit">
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                      
-                                    </div>
-                                </form>
+
+                                    <button type="submit">
+                                        <i class="fa-solid fa-arrow-right"></i>
+
                             </div>
-                            <p>By clicking subcribe, you agree to the</p>
-                            <a href="#">Terms of Service and Privacy Policy.</a>
+                            </form>
                         </div>
+                        <p>By clicking subcribe, you agree to the</p>
+                        <a href="#">Terms of Service and Privacy Policy.</a>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </footer>
     <script src="./Assests/js/detail.js"></script>
@@ -660,4 +664,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -140,6 +140,7 @@ const fetchTrendingProducts = async () => {
     document.getElementById("displayTrendingProduct").innerHTML = print
 }
 
+
 window.onload = () => {
     fetchCategory()
     fetchProduct()
