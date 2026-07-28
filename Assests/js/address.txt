@@ -1,0 +1,15 @@
+address
+    all user data fetch     find    id      uData
+
+    uData?.address      undefined
+
+    button  Add Address
+
+    DOM
+        form
+            input       line1   line2   landmark    city    pincode   
+            input       submit  
+
+        form
+            input       line1   line2   landmark    city    pincode   
+            input       submit  

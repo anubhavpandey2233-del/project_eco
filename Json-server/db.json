@@ -149,11 +149,19 @@
       "items": [
         {
           "pid": "jxuPI5i6WLU",
-          "quantity": 2
+          "quantity": 5
         },
         {
           "pid": "nHICaOmbAOM",
           "quantity": 5
+        },
+        {
+          "pid": "CNAaHzocfy8",
+          "quantity": 1
+        },
+        {
+          "pid": "0tXsDof3h8E",
+          "quantity": 1
         }
       ],
       "id": "iGGiaFasDHY"

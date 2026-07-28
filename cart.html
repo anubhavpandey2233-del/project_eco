@@ -85,24 +85,22 @@
             <div class="cart-wrapper">
 
                 <!-- Left Side -->
-                <div class="cart-items">
+                <div class="cart-items" id="cart-items">
 
-                    <!-- Product 1 -->
+
                     <div class="cart-card">
 
                         <div class="product-info" id="product-image">
 
-                                <div class="product-image" >
-                                    
-                                </div>
+                            <div class="product-image" id="cartImage">
+                                <!-- <img src="images/product2.png" alt=""> -->
+                            </div>
 
-                                <div class="product-details">
-                                    
-                                    <p><span>Size:</span> Large</p>
-                                    <p><span>Color:</span> White</p>
-
-                                    <h2>$145</h2>
-                                </div>
+                            <div class="product-details" id="productDetail">
+                                <p><span>Name:</span> Large</p>
+                                <p><span>Quantity:</span> Quantity</p>
+                                <p><span>Color:</span> White</p>
+                            </div>
 
                         </div>
 
@@ -122,77 +120,7 @@
 
                     </div>
 
-                   
-                    <!-- <div class="cart-card">
 
-                        <div class="product-info">
-
-                            <div class="product-image">
-                                <img src="images/product2.png" alt="">
-                            </div>
-
-                            <div class="product-details">
-                                <h3>Checkered Shirt</h3>
-
-                                <p><span>Size:</span> Medium</p>
-                                <p><span>Color:</span> Red</p>
-
-                                <h2>$180</h2>
-                            </div>
-
-                        </div>
-
-                        <div class="cart-actions">
-
-                            <button class="delete-btn">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-
-                            <div class="quantity-box">
-                               <button onclick="minBtn()" id="minBtn">-</button>
-                                <span onclick="spanQty()" id="spanQty">1</span>
-                                <button onclick="plusBtn()" id="plusBtn">+</button>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    
-                    <div class="cart-card">
-
-                        <div class="product-info">
-
-                            <div class="product-image">
-                                <img src="images/product3.png" alt="">
-                            </div>
-
-                            <div class="product-details">
-                                <h3>Skinny Fit Jeans</h3>
-
-                                <p><span>Size:</span> Large</p>
-                                <p><span>Color:</span> Blue</p>
-
-                                <h2>$240</h2>
-                            </div>
-
-                        </div>
-
-                        <div class="cart-actions">
-
-                            <button class="delete-btn">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-
-                            <div class="quantity-box">
-                                <button onclick="minBtn()" id="minBtn">-</button>
-                                <span onclick="spanQty()" id="spanQty">1</span>
-                                <button onclick="plusBtn()" id="plusBtn">+</button>
-                            </div>
-
-                        </div>
-
-                    </div> -->
 
                 </div>
 
@@ -201,7 +129,7 @@
 
                     <h2>Order Summary</h2>
 
-                    <div class="summary-row">
+                    <div class="summary-row" id="subtotal">
                         <span>Subtotal</span>
                         <strong>$565</strong>
                     </div>
@@ -316,7 +244,7 @@
     </footer>
 
     <script src="./Assests/js/cart.js"></script>
-   
+
 </body>
 
 </html>
