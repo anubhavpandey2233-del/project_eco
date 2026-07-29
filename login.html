@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="Assests/css/bootstrap.min.css">
     <link rel="stylesheet" href="Assests/css/style.css">
-   
+
     <link rel="stylesheet" href="Assests/css/media.css">
 </head>
 
@@ -53,13 +53,17 @@
                                 <a class="nav-link" aria-current="page" href="about.html">About US</a>
                             </li>
 
-
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="cart.html"><i
+                                        class="fa-solid fa-cart-shopping"></i>Cart</a>
+                            </li>
                         </ul>
 
                         <div class="fav_cart">
                             <ul class="icons">
                                 <!-- <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li> -->
-                                <li><a href="login.html"><i class="fa-regular fa-user" style="margin-right: 10px;"></i>Login here</a></li>
+                                <li><a href="login.html"><i class="fa-regular fa-user"
+                                            style="margin-right: 10px;"></i>Login here</a></li>
                                 <!-- <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
                                 <li><a href="#"></a><i class="fa-solid fa-cart-shopping"></i></li> -->
                             </ul>
@@ -75,31 +79,31 @@
     </header>
 
     <main>
-       <section id="login">
-         <div class="logindata">
-            <div class="container">
-                <div class="login">
-                    <form action="" method="get" onsubmit="return handlelogin()">
-                        <h2>Login</h2>
-                        
-                        <label for="email">Email:</label>
-                        <input type="text" name="email" id="email" placeholder="enter your email">
-                        <span id="emailErr" style="color: red;"></span><br>
+        <section id="login">
+            <div class="logindata">
+                <div class="container">
+                    <div class="login">
+                        <form action="" method="get" onsubmit="return handlelogin()">
+                            <h2>Login</h2>
 
-                        <label for="pass">Password:</label> 
-                        <input type="password" name="password" id="pass" placeholder="enter your password">
-                        <span id="passwordErr" style="color: red;"></span><br>
-                        
-                        <button type="submit">Login</button>
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" id="email" placeholder="enter your email">
+                            <span id="emailErr" style="color: red;"></span><br>
 
-                        <p class="loginpage">Forget <a href="forget.html">Password?</a></p>
-                        <p class="signup">Don't have an account?<a href="register.html">Sign Up</a></p>
-                    </form>
+                            <label for="pass">Password:</label>
+                            <input type="password" name="password" id="pass" placeholder="enter your password">
+                            <span id="passwordErr" style="color: red;"></span><br>
+
+                            <button type="submit">Login</button>
+
+                            <p class="loginpage">Forget <a href="forget.html">Password?</a></p>
+                            <p class="signup">Don't have an account?<a href="register.html">Sign Up</a></p>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-       </section>
-    
+        </section>
+
     </main>
 
     <div class="container">

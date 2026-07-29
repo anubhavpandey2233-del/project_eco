@@ -79,8 +79,17 @@ const calcTotal = () => {
 
         total += qty * price;
 
+
+
     }
 
+    let dFee=parseInt(document.getElementById("deliveryFee").innerHTML)
+    console.log(dFee);
+
+    let deliveryFee=total+dFee;
+
+    document.getElementById("deliveryFee").innerHTML=dFee
+    document.getElementById("totalCharge").innerHTML=deliveryFee
 
     document.getElementById("subtotal").innerHTML = total
 
@@ -141,6 +150,7 @@ const fetchCartItem = async () => {
                     <span onclick="spanQty()" id="spanQty">${v.quantity}</span>
                     <button onclick="plusBtn(this)" id="plusBtn">+</button>
                 </div>
+                
 
             </div>
 

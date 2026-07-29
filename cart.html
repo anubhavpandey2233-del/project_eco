@@ -17,6 +17,15 @@
     <link rel="stylesheet" href="Assests/css/bootstrap.min.css">
     <link rel="stylesheet" href="Assests/css/style.css">
     <link rel="stylesheet" href="Assests/css/media.css">
+
+    <style>
+        .checkout-btn{
+            display: flex;
+            text-align: center !important;
+            align-items: center;
+           padding-left: 130px;
+        }
+    </style>
 </head>
 
 <body>
@@ -50,6 +59,10 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="about.html">About US</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="cart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
                             </li>
 
 
@@ -134,21 +147,17 @@
                         <strong>$565</strong>
                     </div>
 
-                    <div class="summary-row">
-                        <span>Discount (-20%)</span>
-                        <strong class="discount">-$113</strong>
-                    </div>
-
+                   
                     <div class="summary-row">
                         <span>Delivery Fee</span>
-                        <strong>$15</strong>
+                        <strong id="deliveryFee">500</strong>
                     </div>
 
                     <hr>
 
                     <div class="summary-row total">
                         <span>Total</span>
-                        <strong>$467</strong>
+                        <strong id="totalCharge">$467</strong>
                     </div>
 
                     <div class="promo-box">
@@ -156,10 +165,10 @@
                         <button>Apply</button>
                     </div>
 
-                    <button class="checkout-btn">
+                    <a href="address.html" class="checkout-btn">
                         Go to Checkout
                         <i class="fa-solid fa-arrow-right"></i>
-                    </button>
+                    </a>
 
                 </div>
 

@@ -1542,3 +1542,201 @@ h3 {
 }
 
 }
+
+
+/* *********************Address CArt****************************** */
+
+
+
+.checkout-section{
+    padding:60px 0;
+    background:#f8f8f8;
+}
+
+.checkout-container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+}
+
+
+/* Address Box */
+
+.address-box{
+    flex:2;
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    border:1px solid #ddd;
+}
+
+.address-box h1{
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+
+.input-group{
+    display:flex;
+    gap:20px;
+}
+
+
+.input-field{
+    width:100%;
+    margin-bottom:20px;
+}
+
+
+.input-field label{
+    display:block;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+
+.input-field input,
+.input-field textarea{
+
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+
+}
+
+
+.input-field input:focus,
+.input-field textarea:focus{
+    border-color:#000;
+}
+
+
+.input-field textarea{
+    height:120px;
+    resize:none;
+}
+
+
+
+/* Button */
+
+.continue-btn{
+
+    width:100%;
+    height:55px;
+    border:none;
+    background:#000;
+    color:#fff;
+    border-radius:30px;
+    font-size:17px;
+    cursor:pointer;
+    margin-top:10px;
+
+}
+
+.continue-btn:hover{
+    background:#333;
+}
+
+
+
+/* Order Summary */
+
+.order-box{
+
+    flex:1;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid #ddd;
+
+}
+
+
+.order-box h2{
+
+    font-size:26px;
+    margin-bottom:25px;
+
+}
+
+
+.summary-item{
+
+    display:flex;
+    justify-content:space-between;
+    margin:18px 0;
+    font-size:18px;
+    color:#555;
+
+}
+
+
+.summary-item b{
+    color:#000;
+}
+
+
+.discount{
+    color:#e53935 !important;
+}
+
+
+.order-box hr{
+
+    border:none;
+    border-top:1px solid #ddd;
+    margin:25px 0;
+
+}
+
+
+.total{
+
+    font-size:22px;
+    font-weight:700;
+    color:#000;
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .checkout-container{
+        flex-direction:column;
+    }
+
+    .order-box{
+        width:100%;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .input-group{
+        flex-direction:column;
+        gap:0;
+    }
+
+    .address-box,
+    .order-box{
+        padding:20px;
+    }
+
+    .address-box h1{
+        font-size:26px;
+    }
+
+}
