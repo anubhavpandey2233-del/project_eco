@@ -1,94 +1,213 @@
-const fetchCartData=async()=>{
+function addAddress() {
 
-    const respons=await fetch("http://localhost:3000/cart");
-    const data=await respons.json()
+    event.preventDefault()
 
-    console.log(data);
-    
-    uData=data.find((v)=>v.id==userId);
-    let print=''
+    let addressForm = document.getElementById("addressForm");
+    let form = document.createElement("form");
+    form.setAttribute("onsubmit", "handleAddressSubmit()")
 
-    uData.map((v)=>{
-        print+=`
-            <form>
+    let inpNumber = document.createElement("input");
+    inpNumber.setAttribute("type", "text");
+    inpNumber.setAttribute("placeholder", "enter number")
+    inpNumber.setAttribute("id", "number")
 
-                <div class="input-group">
+    let divNum = document.createElement("div");
+    divNum.setAttribute("class", "input-field");
 
-                    <div class="input-field">
-                        <label>First Name</label>
-                        <input type="text" placeholder="Enter first name">
-                    </div>
-
-                    <div class="input-field">
-                        <label>Last Name</label>
-                        <input type="text" placeholder="Enter last name">
-                    </div>
-
-                </div>
+    divNum.appendChild(inpNumber);
 
 
-                <div class="input-field">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="Enter email address">
-                </div>
+    let textareaLine1 = document.createElement("textarea");
+    textareaLine1.setAttribute("placeholder", "enter address line 1")
+    textareaLine1.setAttribute("id", "addline1")
+    let textareaLine2 = document.createElement("textarea");
+    textareaLine2.setAttribute("placeholder", "enter address line 2")
+    textareaLine2.setAttribute("id", "addline2")
+
+    let divAdd = document.createElement("div");
+    divAdd.setAttribute("class", "input-field");
+
+    divAdd.appendChild(textareaLine1);
+    divAdd.appendChild(textareaLine2);
+
+    let divGroup = document.createElement("div");
+    divGroup.setAttribute("class", "input-group")
 
 
-                <div class="input-field">
-                    <label>Phone Number</label>
-                    <input type="text" placeholder="Enter phone number">
-                </div>
 
 
-                <div class="input-field">
-                    <label>Full Address</label>
-                    <textarea placeholder="Enter your address"></textarea>
-                </div>
+    let inpLandmark = document.createElement("input");
+    inpLandmark.setAttribute("type", "text");
+    inpLandmark.setAttribute("placeholder", "enter Landemark")
+    inpLandmark.setAttribute("id", "landmark")
+
+    let divLandmark = document.createElement("div");
+    divLandmark.setAttribute("class", "input-field");
+
+    divLandmark.appendChild(inpLandmark)
 
 
-                <div class="input-group">
 
-                    <div class="input-field">
-                        <label>City</label>
-                        <input type="text" placeholder="Enter city">
-                    </div>
+    let inpCity = document.createElement("input");
+    inpCity.setAttribute("type", "text");
+    inpCity.setAttribute("placeholder", "enter city")
+    inpCity.setAttribute("id", "city")
 
+    let divCity = document.createElement("div");
+    divCity.setAttribute("class", "input-field");
 
-                    <div class="input-field">
-                        <label>State</label>
-                        <input type="text" placeholder="Enter state">
-                    </div>
+    divCity.appendChild(inpCity)
 
-                </div>
+    let inpPincode = document.createElement("input");
+    inpPincode.setAttribute("type", "text");
+    inpPincode.setAttribute("placeholder", "enter pincode")
+    inpPincode.setAttribute("id", "pincode")
 
+    let divPincode = document.createElement("div");
+    divPincode.setAttribute("class", "input-field");
 
-                <div class="input-group">
-
-                    <div class="input-field">
-                        <label>Country</label>
-                        <input type="text" placeholder="Enter country">
-                    </div>
+    divPincode.appendChild(inpPincode)
 
 
-                    <div class="input-field">
-                        <label>Zip Code</label>
-                        <input type="text" placeholder="Enter zip code">
-                    </div>
+    divGroup.appendChild(divNum)
+    divGroup.appendChild(divAdd)
+    divGroup.appendChild(divLandmark);
+    divGroup.appendChild(divCity);
+    divGroup.appendChild(divPincode);
 
-                </div>
+    const submitBtn = document.createElement("button");
+    submitBtn.setAttribute("type", "submit");
+    submitBtn.textContent = "submit"
+
+    form.appendChild(divGroup);
+    form.appendChild(submitBtn);
 
 
-                <button class="continue-btn">
-                    Continue To Payment
-                </button>
+    addressForm.appendChild(form)
 
 
-            </form>
 
+}
+
+const handleAddressSubmit = async () => {
+
+
+    let userId = localStorage.getItem("id")
+    console.log(userId);
+
+
+    const respons = await fetch(`http://localhost:3000/users/${userId}`);
+    let userData = await respons.json()
+
+    console.log(userData);
+
+    let number = document.getElementById("number").value;
+    let addline1 = document.getElementById("addline1").value;
+    let addline2 = document.getElementById("addline2").value;
+    let landmark = document.getElementById("landmark").value;
+    let city = document.getElementById("city").value;
+    let pincode = document.getElementById("pincode").value;
+
+    console.log(number, addline1, addline2, landmark, city, pincode);
+
+
+
+    let addObj = {
+        number,
+        addline1,
+        addline2,
+        landmark,
+        city,
+        pincode
+    }
+
+    console.log(addObj);
+
+    console.log(userData?.address);
+
+    if (userData?.address) {
+        userData?.address.push(addObj);
+
+        await fetch(`http://localhost:3000/users/${userId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "Application/json"
+            },
+            body: JSON.stringify(userData)
+        })
+
+    } else {
+        userData.address = [addObj];
+
+        await fetch(`http://localhost:3000/users/${userId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "Application/json"
+            },
+            body: JSON.stringify(userData)
+        })
+    }
+
+
+
+}
+
+const displayAddress = async () => {
+
+    let userId = localStorage.getItem("id")
+
+    const respons = await fetch(`http://localhost:3000/users/${userId}`);
+    const userData = await respons.json();
+
+    console.log(userData);
+    let print = ''
+
+    console.log(userData.address);
+
+    print += `
+            <table border="2" class="table">
+                <tr>
+                    <th>Select</th>
+                    <th>Number</th>
+                    <th>Address 1</th>
+                    <th>Address 2</th>
+                    <th>Landmark</th>
+                    <th>City</th>
+                    <th>Pincode</th>
+                </tr>
         `
+
+    userData.address.map((v) => {
+
+        
+
+        print += `
+            
+             <tr>
+                <td><input type="radio" name="addrSelec"></td>
+                
+                <td>${v.number}</td>
+                <td>${v.addline1}</td>
+                <td>${v.addline2}</td>
+                <td>${v.landmark}</td>
+                <td>${v.city}</td>
+                <td>${v.pincode}</td>
+            </tr>
+        `
+
+        
+
+
+
     })
+
+    print += `</table>`
+
+    document.getElementById("displayAddress").innerHTML = print
+
 }
 
 
-window.onload=()=>{
-    fetchCartData()
+window.onload = () => {
+    displayAddress();
 }

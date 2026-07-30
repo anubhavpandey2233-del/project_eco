@@ -116,7 +116,33 @@
       "name": "khanak IT",
       "email": "khanakitclass@gmail.com",
       "password": "Khanak@123",
-      "id": "Xplvlf9nxPg"
+      "id": "Xplvlf9nxPg",
+      "address": [
+        {
+          "number": "2332456789",
+          "addline1": "Gujarat",
+          "addline2": "Surat",
+          "landmark": "surat",
+          "city": "surat",
+          "pincode": "394453"
+        },
+        {
+          "number": "asd",
+          "addline1": "Up",
+          "addline2": "UP",
+          "landmark": "Ayodhya",
+          "city": "Ayodya",
+          "pincode": "223454"
+        },
+        {
+          "number": "2",
+          "addline1": "dd",
+          "addline2": "ee",
+          "landmark": "tt",
+          "city": "44",
+          "pincode": "rtr"
+        }
+      ]
     },
     {
       "name": "Palak",
