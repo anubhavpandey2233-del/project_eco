@@ -39,8 +39,8 @@ const productSubmit = async () => {
 
         const allFiles = document.getElementById("allFiles");
 
-        console.log(allFiles.childNodes[i + 1].childNodes[3]);
-        console.log(productImg.length);
+        // console.log(allFiles.childNodes[i + 1].childNodes[3]);
+        // console.log(productImg.length);
 
 
         if (productImg[i].files.length === 0) {

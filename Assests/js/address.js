@@ -90,7 +90,7 @@ function addAddress() {
 }
 
 const handleAddressSubmit = async () => {
-
+    
 
     let userId = localStorage.getItem("id")
     console.log(userId);
@@ -178,8 +178,6 @@ const displayAddress = async () => {
         `
 
     userData.address.map((v) => {
-
-        
 
         print += `
             

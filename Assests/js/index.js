@@ -172,6 +172,14 @@ const Authentication = () => {
     document.getElementById("auth").innerHTML = print
 }
 
+const handleSeasonItem=(type)=>{
+    let storeType=localStorage.setItem("ProductType",type)
+    console.log(storeType);
+
+    window.location.href = "Product.html";
+    
+}
+
 window.onload = () => {
     fetchCategory()
     fetchProduct()

@@ -127,20 +127,12 @@
           "pincode": "394453"
         },
         {
-          "number": "asd",
-          "addline1": "Up",
-          "addline2": "UP",
+          "number": "123567890",
+          "addline1": "UP\n",
+          "addline2": "Ayodhya",
           "landmark": "Ayodhya",
-          "city": "Ayodya",
-          "pincode": "223454"
-        },
-        {
-          "number": "2",
-          "addline1": "dd",
-          "addline2": "ee",
-          "landmark": "tt",
-          "city": "44",
-          "pincode": "rtr"
+          "city": "Ayodhya",
+          "pincode": "224455"
         }
       ]
     },
@@ -148,7 +140,25 @@
       "name": "Palak",
       "email": "palak@gmail.com",
       "password": "Palak@123",
-      "id": "n2isIEkdJYY"
+      "id": "n2isIEkdJYY",
+      "address": [
+        {
+          "number": "2233445566",
+          "addline1": "Gujarat\nGujarat",
+          "addline2": "Gujrarat",
+          "landmark": "Gujarat",
+          "city": "Surat",
+          "pincode": "395008"
+        },
+        {
+          "number": "34556577678",
+          "addline1": "wdgffdg",
+          "addline2": "dgfdd",
+          "landmark": "gdfg",
+          "city": "fgfg",
+          "pincode": "2343"
+        }
+      ]
     },
     {
       "name": "Anubhav",
@@ -175,7 +185,7 @@
       "items": [
         {
           "pid": "jxuPI5i6WLU",
-          "quantity": 5
+          "quantity": 9
         },
         {
           "pid": "nHICaOmbAOM",
@@ -209,6 +219,16 @@
         }
       ],
       "id": "1f6Jv6UUt7E"
+    },
+    {
+      "userId": null,
+      "items": [
+        {
+          "pid": "jxuPI5i6WLU",
+          "quantity": 4
+        }
+      ],
+      "id": "aqDgqdy0RoA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
