@@ -93,6 +93,8 @@ const calcTotal = () => {
 
     document.getElementById("subtotal").innerHTML = total
 
+    localStorage.setItem("Amount",total)
+
 
 
 }

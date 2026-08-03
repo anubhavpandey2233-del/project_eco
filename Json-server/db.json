@@ -119,20 +119,31 @@
       "id": "Xplvlf9nxPg",
       "address": [
         {
-          "number": "2332456789",
-          "addline1": "Gujarat",
-          "addline2": "Surat",
-          "landmark": "surat",
-          "city": "surat",
-          "pincode": "394453"
+          "id": "631b191f-c5be-46e6-919d-d640b98186cb",
+          "number": "2",
+          "addline1": "s",
+          "addline2": "s",
+          "landmark": "s",
+          "city": "s",
+          "pincode": "s"
         },
         {
-          "number": "123567890",
-          "addline1": "UP\n",
-          "addline2": "Ayodhya",
-          "landmark": "Ayodhya",
-          "city": "Ayodhya",
-          "pincode": "224455"
+          "id": "096d7be4-20e8-407b-b8a3-783c2fe06f97",
+          "number": "3",
+          "addline1": "f",
+          "addline2": "f",
+          "landmark": "f",
+          "city": "f",
+          "pincode": "f"
+        },
+        {
+          "id": "3f92ea8e-cbb7-4831-9874-44eaecf15443",
+          "number": "22334455",
+          "addline1": "Gujarat",
+          "addline2": "Gujarat",
+          "landmark": "Gujarat",
+          "city": "Surat",
+          "pincode": "395000"
         }
       ]
     },
@@ -140,25 +151,7 @@
       "name": "Palak",
       "email": "palak@gmail.com",
       "password": "Palak@123",
-      "id": "n2isIEkdJYY",
-      "address": [
-        {
-          "number": "2233445566",
-          "addline1": "Gujarat\nGujarat",
-          "addline2": "Gujrarat",
-          "landmark": "Gujarat",
-          "city": "Surat",
-          "pincode": "395008"
-        },
-        {
-          "number": "34556577678",
-          "addline1": "wdgffdg",
-          "addline2": "dgfdd",
-          "landmark": "gdfg",
-          "city": "fgfg",
-          "pincode": "2343"
-        }
-      ]
+      "id": "n2isIEkdJYY"
     },
     {
       "name": "Anubhav",
@@ -185,11 +178,11 @@
       "items": [
         {
           "pid": "jxuPI5i6WLU",
-          "quantity": 9
+          "quantity": 10
         },
         {
           "pid": "nHICaOmbAOM",
-          "quantity": 5
+          "quantity": 7
         },
         {
           "pid": "CNAaHzocfy8",
@@ -221,14 +214,45 @@
       "id": "1f6Jv6UUt7E"
     },
     {
-      "userId": null,
+      "userId": "Xplvlf9nxPg",
       "items": [
         {
           "pid": "jxuPI5i6WLU",
           "quantity": 4
         }
       ],
-      "id": "aqDgqdy0RoA"
+      "id": "aqDgqdy0RoA",
+      "status": "completed"
+    }
+  ],
+  "orders": [
+    {
+      "userId": "Xplvlf9nxPg",
+      "addrId": "096d7be4-20e8-407b-b8a3-783c2fe06f97",
+      "cId": "aqDgqdy0RoA",
+      "Amount": 3573,
+      "id": "88NR2T-c5l8"
+    },
+    {
+      "userId": "Xplvlf9nxPg",
+      "addrId": null,
+      "cId": "aqDgqdy0RoA",
+      "Amount": null,
+      "id": "-2OhCET8B_c"
+    },
+    {
+      "userId": "Xplvlf9nxPg",
+      "addrId": "096d7be4-20e8-407b-b8a3-783c2fe06f97",
+      "cId": "aqDgqdy0RoA",
+      "Amount": 3573,
+      "id": "KZPdxMOQKc0"
+    },
+    {
+      "userId": "Xplvlf9nxPg",
+      "addrId": "096d7be4-20e8-407b-b8a3-783c2fe06f97",
+      "cId": "aqDgqdy0RoA",
+      "Amount": 3573,
+      "id": "zbKpDjN9uKU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

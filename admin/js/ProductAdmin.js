@@ -39,8 +39,7 @@ const productSubmit = async () => {
 
         const allFiles = document.getElementById("allFiles");
 
-        // console.log(allFiles.childNodes[i + 1].childNodes[3]);
-        // console.log(productImg.length);
+        console.log(allFiles);
 
 
         if (productImg[i].files.length === 0) {
@@ -49,11 +48,14 @@ const productSubmit = async () => {
 
         } else {
 
-        //    let productImg1 = document.querySelectorAll('input[type="file"]').files[0]
+            //    let productImg1 = document.querySelectorAll('input[type="file"]').files[0]
 
             const allowedfiles = ['image/jpeg', 'image/jpg', 'image/png']
 
             if (allowedfiles.includes(productImg[i].files[0].type)) {
+
+                console.log(allFiles.childNodes);
+
 
                 allFiles.childNodes[i + 1].childNodes[3].innerHTML = ''
 
@@ -257,7 +259,7 @@ const productSubmit = async () => {
             const data = await response.json()
             console.log(data);
         }
-        
+
 
     }
 

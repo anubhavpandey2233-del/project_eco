@@ -86,146 +86,45 @@
     </header>
 
 
-
-    <main class="checkout-section">
-
-        <div class="checkout-container">
-
-
-            <!-- Address Form -->
-
-            <div class="address-box" id="addressData">
-
-                <h1>Shipping Address</h1>
-
-                <div>
-                    <button type="button" onclick="addAddress()" class="addressBtn">
-                        Add Address
-                    </button>
-                </div>
-                <style>
-                    .addressBtn,.orderbtn,.submitAddress {
-                        margin: 30px;
-                        font-size: 25px;
-                        font-weight: 800;
-                        padding: 10px;
-                        background-color: rgb(51, 139, 206);
-                        color: white;
-                        border-radius: 10px;
-                    }
-                </style>
-                <div id="addressForm"></div>
-
-                <div id="displayAddress"></div>
-
-                <table border="2">
-
-                </table>
-
-                <!-- <form>
-
-                 <div class="input-group">
-                        
-                        <div class="input-field">
-                            <label>Phone Number</label>
-                            <input type="text" placeholder="Enter phone number">
-                        </div>
-
-
-
-                        <div class="input-field">
-                            <label>Full Address</label>
-                            <textarea placeholder="Enter your address"></textarea>
-                        </div>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <div class="input-field">
-                            <label>Landmark</label>
-                            <input type="text" placeholder="Enter city">
-                        </div>
-
-
-                        <div class="input-field">
-                            <label>City</label>
-                            <input type="text" placeholder="Enter state">
-                        </div>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-
-
-                        <div class="input-field">
-                            <label>Zip Code</label>
-                            <input type="text" placeholder="Enter zip code">
-                        </div>
-
-                    </div>
-
-
-                    <button class="continue-btn">
-                        Continue To Payment
-                    </button>
-
-
-                </form> -->
-
-                <button class="orderbtn" onclick="handlePlacedOrder()">Place Order</button>
-            </div>
-
-
-
-            <!-- Order Summary -->
-
-            <!-- <div class="order-box">
-
-            <h2>Order Summary</h2>
-
-            <div class="summary-item">
-                <span>Subtotal</span>
-                <b>$565</b>
-            </div>
-
-
-            <div class="summary-item">
-                <span>Discount (-20%)</span>
-                <b class="discount">-$113</b>
-            </div>
-
-
-            <div class="summary-item">
-                <span>Delivery Fee</span>
-                <b>$15</b>
-            </div>
-
-
-            <hr>
-
-
-            <div class="summary-item total">
-                <span>Total</span>
-                <b>$467</b>
-            </div>
-
-
-        </div> -->
-
-
-        </div>
-
-
-    </main>
+  
 
 
     <div class="container">
         <hr>
     </div>
+
+
+    <main class="container my-5">
+
+    <h2 class="text-center mb-4">Your Orders</h2>
+
+    <!-- Product 1 -->
+    <div class="card mb-3 shadow-sm" id="displayData">
+        <div class="row g-0 align-items-center">
+            <!-- <div class="col-md-2 text-center p-3">
+                <img src="images/product1.jpg" class="img-fluid rounded" alt="Product">
+            </div> -->
+
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h5 class="card-title">Wireless Headphones</h5>
+                    <p class="mb-1">Color : Black</p>
+                    <p class="mb-1">Quantity : 1</p>
+                    <p class="mb-1">Status : </p>
+                </div>
+            </div>
+
+            <div class="col-md-3 text-center">
+                <h5 class="text-success">₹1,999</h5>
+            </div>
+        </div>
+    </div>
+
+  
+
+    
+
+</main>
 
     <footer>
         <div class="container">
@@ -296,7 +195,7 @@
         </div>
     </footer>
 
-    <script src="./Assests/js/address.js"></script>
+    <script src="./Assests/js/Order_list.js"></script>
 
 </body>
 
