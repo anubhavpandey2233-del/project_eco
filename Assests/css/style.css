@@ -1740,3 +1740,90 @@ h3 {
     }
 
 }
+
+
+main{
+    padding:40px 0;
+    background:#f8f9fa;
+}
+
+/* Product Card */
+.card{
+    border:none;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Product Image */
+.card img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+}
+
+/* Product Details */
+.card-title{
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.card-body p{
+    margin-bottom:5px;
+    color:#666;
+}
+
+/* Price */
+.text-success{
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* Price Summary */
+.card-body span{
+    font-size:17px;
+}
+
+hr{
+    margin:15px 0;
+}
+
+/* Place Order Button */
+.btn-warning{
+    background:#ff9800;
+    border:none;
+    color:#fff;
+    font-weight:600;
+    padding:12px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.btn-warning:hover{
+    background:#e68900;
+    color:#fff;
+}
+
+/* Responsive */
+@media (max-width:768px){
+
+    .card img{
+        width:80px;
+        height:80px;
+    }
+
+    .text-success{
+        font-size:18px;
+        margin-bottom:15px;
+    }
+
+    .card-title{
+        font-size:18px;
+    }
+}

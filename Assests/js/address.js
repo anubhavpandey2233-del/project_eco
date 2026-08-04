@@ -90,7 +90,7 @@ function addAddress() {
 }
 
 const handleAddressSubmit = async () => {
-    
+
 
     let userId = localStorage.getItem("id")
     console.log(userId);
@@ -113,13 +113,17 @@ const handleAddressSubmit = async () => {
 
 
     let addObj = {
+        addressId: crypto.randomUUID(),
         number,
         addline1,
         addline2,
         landmark,
         city,
         pincode
+
     }
+
+    localStorage.setItem("addressId", addObj.addressId)
 
     console.log(addObj);
 
@@ -147,6 +151,7 @@ const handleAddressSubmit = async () => {
             body: JSON.stringify(userData)
         })
     }
+
 
 
 
@@ -182,7 +187,7 @@ const displayAddress = async () => {
         print += `
             
              <tr>
-                <td><input type="radio" name="addrSelec"></td>
+                <td><input type="radio" name="addrSelec" value="${v.id}" onchange="handleradioChange(this)"></td>
                 
                 <td>${v.number}</td>
                 <td>${v.addline1}</td>
@@ -193,8 +198,6 @@ const displayAddress = async () => {
             </tr>
         `
 
-        
-
 
 
     })
@@ -203,8 +206,77 @@ const displayAddress = async () => {
 
     document.getElementById("displayAddress").innerHTML = print
 
+
+
 }
 
+const handleradioChange = (e) => {
+
+    console.log(e);
+    document.querySelector(".btnplaceOrder").style.display = "block"
+}
+
+const hanldlePlaceOrder = async () => {
+
+    let userId = localStorage.getItem("id");
+    let Amount = localStorage.getItem("Amount");
+    let addressId = localStorage.getItem("addressId");
+    let status = "order placed";
+
+    console.log(userId, Amount, addressId, status);
+
+    const response = await fetch("http://localhost:3000/cart");
+    const cartData = await response.json();
+
+    console.log(cartData);
+
+    let cartId;
+
+    cartData.map((v) => {
+        cartId = v.id
+    })
+    console.log(cartId);
+
+
+
+    localStorage.setItem("cartId", cartId);
+
+    let orderObject = {
+        userId,
+        cartId,
+        addressId,
+        Amount,
+        status
+    }
+
+    const res = await fetch("http://localhost:3000/orders", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(orderObject)
+    })
+    const orderData = await res.json()
+    console.log(orderData);
+
+    alert("Your order placed successfully");
+
+
+    const resCart = await fetch(`http://localhost:3000/cart/${cartId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ status: "Completed" })
+    });
+
+    //  localStorage.removeItem("addId")
+    // localStorage.removeItem("cartId")
+    // localStorage.removeItem("Amount")
+
+    window.location.href = "Order_list.html"
+
+}
 
 window.onload = () => {
     displayAddress();

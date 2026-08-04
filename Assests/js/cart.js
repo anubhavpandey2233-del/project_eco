@@ -79,17 +79,19 @@ const calcTotal = () => {
 
         total += qty * price;
 
+        localStorage.setItem("Amount", total)
+
 
 
     }
 
-    let dFee=parseInt(document.getElementById("deliveryFee").innerHTML)
+    let dFee = parseInt(document.getElementById("deliveryFee").innerHTML)
     console.log(dFee);
 
-    let deliveryFee=total+dFee;
+    let deliveryFee = total + dFee;
 
-    document.getElementById("deliveryFee").innerHTML=dFee
-    document.getElementById("totalCharge").innerHTML=deliveryFee
+    document.getElementById("deliveryFee").innerHTML = dFee
+    document.getElementById("totalCharge").innerHTML = deliveryFee
 
     document.getElementById("subtotal").innerHTML = total
 

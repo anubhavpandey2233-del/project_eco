@@ -40,7 +40,7 @@
                                 <a class="nav-link active" aria-current="page" href="Index.html">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="Product.html">Products</a>
+                                <a class="nav-link" aria-current="page" href="Product.html?type=home">Products</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
@@ -56,7 +56,9 @@
                                 <a class="nav-link active" aria-current="page" href="cart.html"><i
                                         class="fa-solid fa-cart-shopping"></i>Cart</a>
                             </li>
-
+                             <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="Order_list.html">Order List</a>
+                            </li>
 
                         </ul>
 
@@ -98,7 +100,7 @@
                     </button>
                 </div>
                 <style>
-                    .addressBtn{
+                    .addressBtn,.btnplaceOrder{
                         margin: 30px;
                         font-size: 25px;
                         font-weight: 800;
@@ -107,7 +109,9 @@
                         color: white;
                         border-radius: 10px;
                     }
-                  
+                  .btnplaceOrder{
+                    display: none;
+                  }
                 </style>
                 <div  id="addressForm"></div>
 
@@ -117,97 +121,13 @@
 
                 </table>
 
-            <!-- <form>
 
-                 <div class="input-group">
-                        
-                        <div class="input-field">
-                            <label>Phone Number</label>
-                            <input type="text" placeholder="Enter phone number">
-                        </div>
-
-
-
-                        <div class="input-field">
-                            <label>Full Address</label>
-                            <textarea placeholder="Enter your address"></textarea>
-                        </div>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <div class="input-field">
-                            <label>Landmark</label>
-                            <input type="text" placeholder="Enter city">
-                        </div>
-
-
-                        <div class="input-field">
-                            <label>City</label>
-                            <input type="text" placeholder="Enter state">
-                        </div>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-
-
-                        <div class="input-field">
-                            <label>Zip Code</label>
-                            <input type="text" placeholder="Enter zip code">
-                        </div>
-
-                    </div>
-
-
-                    <button class="continue-btn">
-                        Continue To Payment
-                    </button>
-
-
-                </form> -->
+                <button onclick="hanldlePlaceOrder()" class="btnplaceOrder">Place Order</button>
             </div>
 
 
 
-            <!-- Order Summary -->
-
-            <!-- <div class="order-box">
-
-            <h2>Order Summary</h2>
-
-            <div class="summary-item">
-                <span>Subtotal</span>
-                <b>$565</b>
-            </div>
-
-
-            <div class="summary-item">
-                <span>Discount (-20%)</span>
-                <b class="discount">-$113</b>
-            </div>
-
-
-            <div class="summary-item">
-                <span>Delivery Fee</span>
-                <b>$15</b>
-            </div>
-
-
-            <hr>
-
-
-            <div class="summary-item total">
-                <span>Total</span>
-                <b>$467</b>
-            </div>
-
-
-        </div> -->
+            
 
 
         </div>

@@ -68,12 +68,19 @@ const handleSesonItem = async () => {
 
 window.onload = () => {
 
+     const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+
+    let value = params.type;
+
     let getProductType = localStorage.getItem("ProductType");
 
-    if (getProductType) {
-        handleSesonItem()
-    } else {
+    if (value) {
         fetchProductItem()
+    } else {
+
+        handleSesonItem()
     }
 
 }
