@@ -1,4 +1,4 @@
-const minBtn = (e) => {
+const minBtn =async(e,pid) => {
 
     // console.log(console.log(e.parentNode.childNodes[3].innerHTML));
 
@@ -29,9 +29,36 @@ const minBtn = (e) => {
     calcTotal()
 
 
+
+    let userId = localStorage.getItem("id");
+
+    const res = await fetch("http://localhost:3000/cart")
+    const cData = await res.json()
+    console.log(cData);
+
+    const cartData1 = cData.filter((v) => v.userId == userId)
+    console.log(cartData1);
+
+    const cartData = cartData1.find(v1 => !v1.status)
+    console.log(cartData);
+
+    const pData = cartData.items.findIndex((v) => v.pid === pid);
+
+    cartData.items[pData].quantity = spanQty
+
+    const resp = await fetch(`http://localhost:3000/cart/${cartData.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(cartData)
+
+    })
+
+
 }
 
-const plusBtn = (e) => {
+const plusBtn = async (e, pid) => {
     console.log(e.parentNode.childNodes[3].innerHTML);
 
 
@@ -58,6 +85,32 @@ const plusBtn = (e) => {
     }
 
     calcTotal()
+
+
+    let userId = localStorage.getItem("id");
+
+    const res = await fetch("http://localhost:3000/cart")
+    const cData = await res.json()
+    console.log(cData);
+
+    const cartData1 = cData.filter((v) => v.userId == userId)
+    console.log(cartData1);
+
+    const cartData = cartData1.find(v1 => !v1.status)
+    console.log(cartData);
+
+    const pData = cartData.items.findIndex((v) => v.pid === pid);
+
+    cartData.items[pData].quantity = spanQty
+
+    const resp = await fetch(`http://localhost:3000/cart/${cartData.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(cartData)
+
+    })
 }
 
 const calcTotal = () => {
@@ -108,7 +161,7 @@ const fetchCartItem = async () => {
 
     console.log(cartData);
 
-    const userCartData = cartData.find((v) => v.userId == uId);
+    const userCartData = cartData.find((v) => v.userId == uId && v.status !== "Completed");
     console.log(userCartData);
 
 
@@ -121,10 +174,11 @@ const fetchCartItem = async () => {
     print = ''
     let total = 0
 
-    userCartData.items.map((v) => {
-        prodcutDetail = productData.find((f) => f.id == v.pid);
+    if (userCartData) {
+        userCartData.items.map((v) => {
+            prodcutDetail = productData.find((f) => f.id == v.pid);
 
-        print += `
+            print += `
             <div class="cart-card"  >
 
             <div class="product-info" id="product-image">
@@ -148,9 +202,9 @@ const fetchCartItem = async () => {
                 </button>
 
                 <div class="quantity-box">
-                    <button onclick="minBtn(this)" id="minBtn">-</button>
+                    <button onclick="minBtn(this,'${v.pid}')" id="minBtn">-</button>
                     <span onclick="spanQty()" id="spanQty">${v.quantity}</span>
-                    <button onclick="plusBtn(this)" id="plusBtn">+</button>
+                    <button onclick="plusBtn(this,'${v.pid}')" id="plusBtn">+</button>
                 </div>
                 
 
@@ -161,9 +215,13 @@ const fetchCartItem = async () => {
          
         `
 
+        });
 
-    });
-    document.getElementById("cart-items").innerHTML = print
+        document.getElementById("cart-items").innerHTML = print
+    }
+
+
+
 
 
 
@@ -177,12 +235,18 @@ const fetchCartItem = async () => {
 window.onload = async () => {
 
     await fetchCartItem()
+    let x = document.getElementById("spanQty")
 
-    let spanQty = parseInt(document.getElementById("spanQty").innerHTML);
+    console.log(x);
 
-    if (spanQty === 1) {
-        document.getElementById("minBtn").disabled = true;
+    if (x) {
+        let spanQty = parseInt(document.getElementById("spanQty").innerHTML);
+
+        if (spanQty === 1) {
+            document.getElementById("minBtn").disabled = true;
+        }
+
+        calcTotal()
     }
 
-    calcTotal()
 }

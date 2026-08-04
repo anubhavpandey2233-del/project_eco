@@ -107,8 +107,12 @@ const handleCart = async () => {
     const cData = await res.json()
     console.log(cData);
 
-    const cartData = cData.find((v) => v.userId == userId)
+    const cartData1 = cData.filter((v) => v.userId == userId)
+    console.log(cartData1);
+
+    const cartData=cartData1.find(v1=>!v1.status)
     console.log(cartData);
+    
 
 
     if (cartData) {
@@ -163,7 +167,7 @@ const handleCart = async () => {
         console.log(data);
     }
 
-
+    window.location.href="cart.html"
 
 
 }
@@ -180,3 +184,7 @@ window.onload = () => {
         let btnMin = document.getElementById("btnMin").disabled = true;
     }
 }
+
+
+const cartbtn=document.getElementById("cartbtn");
+cartbtn.addEventListener("click",handleCart)
