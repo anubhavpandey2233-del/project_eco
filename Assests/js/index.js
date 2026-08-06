@@ -19,11 +19,14 @@ const fetchCategory = async () => {
 
     let print = ''
 
+
+
+
     data.map((v, i) => {
         print += `
         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
             <div class="cateimg">
-                <a href="#">
+                <a href="Product.html?category=${v.id}">
                    <img src="./admin/images/${v.category_image}">
 
                 </a>
@@ -142,9 +145,9 @@ const fetchTrendingProducts = async () => {
     document.getElementById("displayTrendingProduct").innerHTML = print
 }
 
-const handleLogout=()=>{
+const handleLogout = () => {
     localStorage.removeItem("id");
-    window.location.href='' //confusion
+    window.location.href = '' //confusion
 }
 
 const Authentication = () => {
@@ -158,7 +161,7 @@ const Authentication = () => {
             </a>
         `
     } else {
-       print+=`
+        print += `
          <a href="login.html">
             <i class="fa-regular fa-user"
                 style="margin-right: 10px;">
@@ -172,13 +175,14 @@ const Authentication = () => {
     document.getElementById("auth").innerHTML = print
 }
 
-const handleSeasonItem=(type)=>{
-    let storeType=localStorage.setItem("ProductType",type)
+const handleSeasonItem = (type) => {
+    let storeType = localStorage.setItem("ProductType", type)
     console.log(storeType);
 
     window.location.href = "Product.html";
-    
+
 }
+
 
 window.onload = () => {
     fetchCategory()

@@ -21,31 +21,53 @@ const showOrderList = async () => {
 
         let cart = carts.find((c) => c.id == o.cartId);
 
-      
+        console.log(cart);
+
+        print += `<tr>
+        
+        <td>${i + 1}</td>
+                    <td>${userName}</td>
+                    <td>
+                    <table>
+        `
 
         cart.items.map((v1) => {
+
 
             let product = products.find((p) => p.id == v1.pid);
 
             print += `
-                <div class="order-row">
-                    <div>${i + 1}</div>
-                    <div>${userName}</div>
-                    <div>
-                        ${product.productName} (${v1.quantity})  ₹${product.price}
-                    </div>
-                    <div>₹${o.Amount}</div>
-                    <div>
-                        <select>
-                            <option value="order placed" ${o.status=="order placed"?"selected":""}>Order Placed</option>
-                            <option value="transit" ${o.status=="transit"?"selected":""}>Transit</option>
-                            <option value="delivered" ${o.status=="delivered"?"selected":""}>Delivered</option>
-                        </select>
-                    </div>
-                </div>
-            `;
+            
+                 
+
+                    
+                        <tr>
+                            <td style="width: 150px;"> ${product.productName}</td>
+                            <td style="width: 150px;"> ${v1.quantity}</td>
+                            <td style="width: 150px;">₹${product.price}</td>
+                        </tr>
+                    
+              
+                     
+                `;
 
         });
+
+        print += `
+        </table>
+                         
+                    </td>
+                    <td>₹${o.Amount}</td>
+                    <td>
+                        <select>
+                            <option value="order placed" ${o.status == "order placed" ? "selected" : ""}>Order Placed</option>
+                            <option value="transit" ${o.status == "transit" ? "selected" : ""}>Transit</option>
+                            <option value="delivered" ${o.status == "delivered" ? "selected" : ""}>Delivered</option>
+                        </select>
+                    </td>
+        
+        </tr>
+                `;
 
     });
 

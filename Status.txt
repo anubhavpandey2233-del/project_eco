@@ -1,0 +1,8 @@
+Status
+	onChange		fn		transist, orderId
+
+						fetch	/order/orderId
+						PATCH
+							body ({status: "transist"})
+
+

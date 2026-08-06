@@ -71,21 +71,6 @@
         "Best_Seller"
       ],
       "id": "0tXsDof3h8E"
-    },
-    {
-      "category": "4nH1P5SwJfA",
-      "subcategory": "jbR-DvIiGEM",
-      "productName": "ssss",
-      "price": "2",
-      "productImg": [
-        "car.jpg",
-        "images.jpg"
-      ],
-      "desc": "sdc",
-      "tags": [
-        "Best_Seller"
-      ],
-      "id": "CNAaHzocfy8"
     }
   ],
   "subcategory": [
@@ -196,14 +181,10 @@
       "items": [
         {
           "pid": "nHICaOmbAOM",
-          "quantity": 6
-        },
-        {
-          "pid": "jxuPI5i6WLU",
           "quantity": 3
         }
       ],
-      "id": "4QkYkxKfvhg",
+      "id": "wr3EbiuaIXE",
       "status": "Completed"
     },
     {
@@ -211,14 +192,25 @@
       "items": [
         {
           "pid": "jxuPI5i6WLU",
-          "quantity": 5
+          "quantity": 3
         },
         {
-          "pid": "nHICaOmbAOM",
-          "quantity": 4
+          "pid": "0tXsDof3h8E",
+          "quantity": 3
         }
       ],
-      "id": "a_SiLeaFF2Y",
+      "id": "47032M6Tl8k",
+      "status": "Completed"
+    },
+    {
+      "userId": "Xplvlf9nxPg",
+      "items": [
+        {
+          "pid": "0tXsDof3h8E",
+          "quantity": 3
+        }
+      ],
+      "id": "7lTz924o8Pc",
       "status": "Completed"
     },
     {
@@ -226,104 +218,53 @@
       "items": [
         {
           "pid": "jxuPI5i6WLU",
-          "quantity": 6
+          "quantity": 1
+        },
+        {
+          "pid": "0tXsDof3h8E",
+          "quantity": 1
         },
         {
           "pid": "nHICaOmbAOM",
-          "quantity": 6
+          "quantity": 1
         }
       ],
-      "id": "NAgIFV9q5VM"
+      "id": "iNc7SQ5u1OY",
+      "status": "Completed"
     }
   ],
   "orders": [
     {
       "userId": "Xplvlf9nxPg",
-      "cartId": "aqDgqdy0RoA",
-      "addressId": "ec1f0981-bd60-4718-ade7-e1aebf06c57b",
-      "Amount": "2573",
-      "status": "order placed",
-      "id": "MdZ34ViZMWU"
-    },
-    {
-      "userId": "Xplvlf9nxPg",
-      "cartId": "Kq4aLY80sDY",
-      "addressId": "ec1f0981-bd60-4718-ade7-e1aebf06c57b",
-      "Amount": "1005",
-      "status": "order placed",
-      "id": "sKtXqdHcFqA"
-    },
-    {
-      "userId": "Xplvlf9nxPg",
-      "cartId": "hgz4-G2mhgQ",
-      "addressId": null,
-      "Amount": "193",
-      "status": "order placed",
-      "id": "VqvsHLUYD5A"
-    },
-    {
-      "userId": "Xplvlf9nxPg",
-      "cartId": "tWk9YeIBEj4",
-      "addressId": null,
-      "Amount": "73",
-      "status": "order placed",
-      "id": "O22KrBHBBvk"
-    },
-    {
-      "userId": "Xplvlf9nxPg",
-      "cartId": "2T6gwoogaFs",
-      "addressId": null,
-      "Amount": "1015",
-      "status": "order placed",
-      "id": "m-HoKBZWQrg"
-    },
-    {
-      "userId": "Xplvlf9nxPg",
-      "cartId": "TDQ00_JoWvI",
+      "cartId": "wr3EbiuaIXE",
       "addressId": null,
       "Amount": "1500",
       "status": "order placed",
-      "id": "Z6-kgVtOx6U"
+      "id": "t3zTa57ttio"
     },
     {
       "userId": "Xplvlf9nxPg",
-      "cartId": "O1UeNjDpwPw",
+      "cartId": "47032M6Tl8k",
+      "addressId": null,
+      "Amount": "78",
+      "status": "order placed",
+      "id": "bilhdYPRXvs"
+    },
+    {
+      "userId": "Xplvlf9nxPg",
+      "cartId": "7lTz924o8Pc",
       "addressId": null,
       "Amount": "63",
       "status": "order placed",
-      "id": "s3XOER5q7jQ"
+      "id": "NEjnikI1s3Q"
     },
     {
       "userId": "Xplvlf9nxPg",
-      "cartId": "g8ozTC9-m80",
+      "cartId": "iNc7SQ5u1OY",
       "addressId": null,
-      "Amount": "88",
+      "Amount": "526",
       "status": "order placed",
-      "id": "uaXv0Ik64QA"
-    },
-    {
-      "userId": "Xplvlf9nxPg",
-      "cartId": "HpocAfW9Skw",
-      "addressId": null,
-      "Amount": "1006",
-      "status": "order placed",
-      "id": "nfBeLujfYuk"
-    },
-    {
-      "userId": "Xplvlf9nxPg",
-      "cartId": "4QkYkxKfvhg",
-      "addressId": null,
-      "Amount": "3015",
-      "status": "order placed",
-      "id": "1dhbK_91dmw"
-    },
-    {
-      "userId": "Xplvlf9nxPg",
-      "cartId": "a_SiLeaFF2Y",
-      "addressId": null,
-      "Amount": "2025",
-      "status": "order placed",
-      "id": "xVdb4U-nP8A"
+      "id": "I8oVt7UO7Ig"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

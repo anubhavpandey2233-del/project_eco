@@ -95,7 +95,13 @@
 
             </div>
 
-
+            <style>
+                .tablledata {
+                    width: 100%;
+                    justify-content:space-evenly;
+                   
+                }
+            </style>
 
 
 
@@ -103,90 +109,79 @@
 
             <div class="col-lg-10 p-4">
 
+                <div class="card-header theme-header rounded-top-4">
 
-                <div class="d-flex justify-content-between align-items-center mb-4">
-
-                    <h3 class="title">
-                        Order Management
-                    </h3>
-
+                    Order List
 
                 </div>
+                <table border='2' class="tablledata">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Sr.No</th>
+                            <th rowspan="2">User Name</th>
+                            <th > 
+                                <table>
+                                    <tr>Items</tr>
+                                    <tr>
+                                        <th style="width: 150px;">Name</th>
+                                        <th style="width: 150px;">Quantity</th>
+                                        <th style="width: 150px;">Price</th>
+                                    </tr>
+                                </table>
+                            </th>
+                            <th rowspan="2">Total Amount</th>
+                            <th rowspan="2">Status</th>
+                        </tr>
 
-
-
-
-                <!-- Form Card -->
-
-                <div class="card border-0 rounded-4 shadow-sm mb-4">
-                    <div class="card-header theme-header rounded-top-4">
-
-                        Order List
-
-                    </div>
-
-                    <div class="order-container">
-
-
-                        <div class="order-header">
-                            <div>Sr.No</div>
-                            <div>User Name</div>
-                            <div>Items</div>
-                            <div>Total Amount</div>
-                            <div>Status</div>
-                        </div>
-
-
-                        <div id="orderList">
-
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <style>
-                    .order-header,
-                    .order-row {
-                        display: flex;
-                        align-items: center;
-                        border: 1px solid #ddd;
-                    }
-
-                    .order-header {
-                        background: #FFFFFF;
-                        font-weight: bold;
-                    }
-
-                    .order-header div,
-                    .order-row div {
-                        flex: 1;
-                        padding: 12px;
-                        text-align: center;
-                    }
-
-                    .order-row {
-                        border-top: none;
-                    }
-                </style>
-
-
-
-                <!-- Table Card -->
-
-
-                <div class="card border-0 rounded-4 shadow-sm">
+                    </thead>
+                    <tbody id="orderList">
+                    </tbody>
+                </table>
+            </div>
 
 
 
 
 
-                </div>
+            <style>
+                .order-header,
+                .order-row {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid #ddd;
+                }
+
+                .order-header {
+                    background: #FFFFFF;
+                    font-weight: bold;
+                }
+
+                .order-header div,
+                .order-row div {
+                    flex: 1;
+                    padding: 12px;
+                    text-align: center;
+                }
+
+                .order-row {
+                    border-top: none;
+                }
+            </style>
+
+
+
+            <!-- Table Card -->
+
+
+            <div class="card border-0 rounded-4 shadow-sm">
+
+
+
+
+
             </div>
         </div>
+    </div>
     </div>
 
     sc

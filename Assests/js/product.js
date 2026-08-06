@@ -41,7 +41,7 @@ const handleSesonItem = async () => {
     const productData = await response.json();
     console.log(productData);
 
-    let seaonData = productData.filter((v) =>v.tags.includes(getProductType));
+    let seaonData = productData.filter((v) => v.tags.includes(getProductType));
     let print = ''
 
     seaonData.map((v1) => {
@@ -66,21 +66,58 @@ const handleSesonItem = async () => {
 }
 
 
+const handleItemsCategoryWise = async (categorytId) => {
+
+    const proResponse = await fetch("http://localhost:3000/products/");
+    const proData = await proResponse.json();
+    console.log(proData);
+
+
+    let categoryData = proData.filter((v) => v.category == categorytId);
+    let print = ''
+
+    categoryData.map((v1) => {
+        print += `
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card">
+                <a href=""><img src="./admin/images/${v1.productImg[0]}" class="img-fluid" alt=""></a>
+                <h4>${v1.productName}</h4>
+                <p>₹${v1.price}</p>
+                <a href="#" class="cart" onclick="handleBuy('${v1.id}')">Buy Now</a>
+            </div>
+        </div>
+
+        `
+    })
+
+    document.getElementById("displayProducts").innerHTML = print
+
+
+}
+
 window.onload = () => {
 
-     const params = new Proxy(new URLSearchParams(window.location.search), {
+    const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
     });
 
-    let value = params.type;
+    let value = params?.type || params?.category;
 
-    let getProductType = localStorage.getItem("ProductType");
 
     if (value) {
-        fetchProductItem()
+        if (value === 'home') {
+            fetchProductItem()  
+
+        } else {
+            handleItemsCategoryWise(value)
+
+        }
+
     } else {
 
         handleSesonItem()
     }
+
+
 
 }
