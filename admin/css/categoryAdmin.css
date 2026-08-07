@@ -305,3 +305,39 @@ span {
     }
 
 }
+
+
+
+
+.tablledataaa{
+    width:100%;
+    border-collapse:collapse;
+    border:1px solid #ddd;
+}
+
+.tablledataaa th,
+.tablledataaa td{
+    padding:12px;
+    border:1px solid #ddd;
+    vertical-align:top;
+}
+
+.tablledataaa thead{
+    background:#2f6f4f;
+    color:#fff;
+}
+
+.tablledataaa tbody tr:hover{
+    background:#f5f5f5;
+}
+
+.tablledataaa table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tablledataaa table td,
+.tablledataaa table th{
+    border:none;
+    padding:6px;
+}

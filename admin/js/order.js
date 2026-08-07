@@ -59,7 +59,7 @@ const showOrderList = async () => {
                     </td>
                     <td>₹${o.Amount}</td>
                     <td>
-                        <select>
+                        <select onchange="handleStatus('${o.id}', this.value)">
                             <option value="order placed" ${o.status == "order placed" ? "selected" : ""}>Order Placed</option>
                             <option value="transit" ${o.status == "transit" ? "selected" : ""}>Transit</option>
                             <option value="delivered" ${o.status == "delivered" ? "selected" : ""}>Delivered</option>
@@ -72,6 +72,21 @@ const showOrderList = async () => {
     });
 
     document.getElementById("orderList").innerHTML = print;
+}
+
+const handleStatus = async (id, status) => {
+
+    await fetch(`http://localhost:3000/orders/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            status: status
+        })
+    });
+
+    alert("Status Updated Successfully");
 }
 
 window.onload = () => {
